@@ -42,8 +42,29 @@ public:
 protected:
 //----------------------------------------------------- Méthodes protégées	
 
+	Identificateur ( const Identificateur & unIdentificateur );
+	// Mode d'emploi (constructeur de copie) : construit une copie de 
+	// unIdentificateur
+	//
+	// Contrat :
+	//
+
+	Identificateur ( );
+	// Mode d'emploi :
+	//
+	// Contrat :
+	//
+
+    virtual ~Identificateur ( );
+	// Mode d'emploi (destructeur) :
+	//
+	// Contrat :
+	//
+
 //----------------------------------------------------- Attributs protégés
 
+	string nomId;
+	Occurrences *occId;
 };
 
 //----------------------- Autres définitions dépendantes de <Identificateur>

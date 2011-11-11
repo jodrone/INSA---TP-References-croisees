@@ -42,8 +42,27 @@ public:
 protected:
 //----------------------------------------------------- Méthodes protégées	
 
-//----------------------------------------------------- Attributs protégés
+	Occurrences ( const Occurrences & uneOccurrences );
+	// Mode d'emploi (constructeur de copie) : construit une copie de 
+	// uneOccurrences
+	//
+	// Contrat :
+	//
 
+	Occurrences ( );
+	// Mode d'emploi :
+	//
+	// Contrat :
+	//
+
+    virtual ~Occurrences ( );
+	// Mode d'emploi (destructeur) :
+	//
+	// Contrat :
+	//
+
+//----------------------------------------------------- Attributs protégés
+	vector <Fichier> vecOcc;
 };
 
 //----------------------- Autres définitions dépendantes de <Occurrences>

@@ -41,9 +41,30 @@ public:
 //------------------------------------------------------------------ PRIVE 
 protected:
 //----------------------------------------------------- Méthodes protégées	
+	
+	Fichier ( const Fichier & unFichier );
+	// Mode d'emploi (constructeur de copie) : construit une copie de 
+	// unFichier
+	//
+	// Contrat :
+	//
 
+	Fichier ( );
+	// Mode d'emploi :
+	//
+	// Contrat :
+	//
+
+    virtual ~Fichier ( );
+	// Mode d'emploi (destructeur) :
+	//
+	// Contrat :
+	//
 //----------------------------------------------------- Attributs protégés
 
+	string nomFic;
+	int nbNumLignes;
+	vector <int> *numLignes;
 };
 
 //----------------------- Autres définitions dépendantes de <Fichier>
