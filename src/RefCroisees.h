@@ -10,7 +10,8 @@
 #define REFCROISEES_H
 
 //--------------------------------------------------- Interfaces utilisées
-
+#include <set>
+#include "Identificateur.h"
 //------------------------------------------------------------- Constantes 
 
 //------------------------------------------------------------------ Types 
@@ -62,7 +63,7 @@ protected:
 	//
 //----------------------------------------------------- Attributs protégés
 
-	set <Identificateur> arbreId;
+	set<Identificateur> arbreId;
 };
 
 //----------------------- Autres définitions dépendantes de <RefCroisees>

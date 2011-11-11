@@ -13,7 +13,7 @@
 using namespace std;
 
 //------------------------------------------------------ Include personnel
-#include "Identificateur"
+#include "Occurrences.h"
 
 //------------------------------------------------------------- Constantes
 

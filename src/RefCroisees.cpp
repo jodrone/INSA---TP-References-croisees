@@ -14,6 +14,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "RefCroisees.h"
+#include "Identificateur.h"
 
 //------------------------------------------------------------- Constantes
 
