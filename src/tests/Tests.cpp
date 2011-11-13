@@ -41,8 +41,11 @@ int main ( )
 {
 // Algorithme :
 //
+	string adresseFichiers("C:/Users/Jo/Documents/INSA/3IF/TP/TP-references-croisees/INSA---TP-References-croisees/src/fichiers/");
 	int a;
-	cout << "coucou :-)" << endl;
+	string listeId;
+	Flot flot1;
+	listeId = flot1.ChercherId(adresseFichiers+="source.txt");
 	cin >> a;
 
 } //----- fin de Main
