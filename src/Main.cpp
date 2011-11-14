@@ -60,7 +60,8 @@ int main ( int argc,const char* argv[] )
 			else
 			 	{ //On a notre fichier a traiter
 					myKeywordFile = argv[1];
-					maListeID = monFlot.ChercherId(myKeywordFile, mesRefCroisees);
+					maListeID = monFlot.ChercherId(myKeywordFile,
+													mesRefCroisees);
 				}
 		break;
 
@@ -69,33 +70,60 @@ int main ( int argc,const char* argv[] )
 			// Cas d'erreur :
 			// -k + le fichier de mots cles (pas de fichier a traiter)
 			monArgTemporaire = argv[1];
-			switch ( monArgTemporaire )
-			{
-				case "-k" :
+			if ( monArgTemporaire == "-k" )
+				{
 					Usage ( "Pas de fichier a traiter" );
 					return ARG_ERROR;
-				break;
+				}
 
-				case "-e" :
-					optionExclure = TRUE;
+			if (monArgTemporaire == "-e" )
+				{
+					optionExclure = true;
+					//On recupere les identifiants dans le fichier concerné
 					myKeywordFile = argv[2];
-					maListeID = monFlot.ChercherId(myKeywordFile, mesRefCroisees);
-				break;
+					maListeID = monFlot.ChercherId(myKeywordFile,
+													mesRefCroisees);
+				}
+			else
+				{
+					//On récupère les identifiants dans les deux fichiers
+					for ( i = 1; i < argc; i++)
+					myKeywordFile = argv[i];
+					maListeID = monFlot.ChercherId(myKeywordFile,
+													mesRefCroisees);
+				}
 
-				default :
-					myKeywordFile = argv[2];
-					maListeID = monFlot.ChercherId(myKeywordFile, mesRefCroisees);
-				break;
-			}
 		break;
 
 		default :
-			cout << "Tiens, voila du caca" << endl;
+			indexArg = 1;
+			monArgTemporaire = argv[indexArg];
+			if ( monArgTemporaire == "-k" )
+				{
+					// On récupère les mots clés
+					myKeywordFile = argv[indexArg + 1];
+					maListeID = monFlot.ChercherId(myKeywordFile,
+													mesRefCroisees);
+					indexArg = indexArg + 2 ; // On peut sauter un argument, vu qu'on vient de le récupérer
+				}
+
+			// En cas de modification de IndexArg suite à "-k"
+			monArgTemporaire = argv[indexArg];
+			if ( monArgTemporaire == "-e" )
+				{
+					optionExclure = true;
+					indexArg = indexArg + 1 ;
+				}
+			//Et on récupère les identifiants de tout le reste
+			for ( indexArg; indexArg < argc; indexArg++ )
+				{
+					myKeywordFile = argv[indexArg];
+					maListeID = monFlot.ChercherId(myKeywordFile,
+												mesRefCroisees);
+				}
 		break;
 
 	}
-
-
 	return 0;
 
 } //----- fin de Main 
