@@ -35,32 +35,33 @@ int main ( int argc,const char* argv[] )
 	int i;
 	
 	string myKeywordFile;
+	string monArgTemporaire;
 	Flot monFlot;
 	RefCroisees mesRefCroisees;
 	string maListeID;
 
+	switch ( argc )
+	{
+		case 1 :
+			Usage ( "Liste d'arguments vide" ) ;
+			return 42;
+			break;
 
 
-	//Traitement du cas où la liste d'arguments est vide
-	if ( argc == 1 )
-	{
-		Usage ( "Liste d'arguments vide" ) ;
-		return 42;
+		case 2 : // Soit -k et pas de fichier soit pas d'options
+			monArgTemporaire = argv [ 1 ];
+			if ( monArgTemporaire == "-k" || monArgTemporaire == "-e" )
+				{
+					Usage ( "Indiquez un fichier à traiter" );
+				}
+			else
+			 	{ //On a notre fichier à traiter
+					myKeywordFile = argv[1];
+					maListeID = monFlot.ChercherId(myKeywordFile, mesRefCroisees);
+				}
+
+
 	}
-	
-	
-	if ( !strcmp(argv[1],"-k") && strcmp(argv[2],"-e") && argc > 3 )
-	{
-		myKeywordFile = argv[2]; //OK, on a un fichier de mot cles
-		maListeID = monFlot.ChercherId(myKeywordFile, mesRefCroisees);
-	}
-	else
-		{ if ( argc==2 || strcmp(argv[2],"-e") )
-		  {
-		      Usage( " Indiquez un fichier de mots cles ");
-			  return 42;
-		  }
-		}
 
 	/*string	adresseFichiers("src/fichiers/");
 

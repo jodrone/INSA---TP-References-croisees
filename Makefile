@@ -13,7 +13,7 @@ DEPENDANCES=Fichier.cpp Flot.cpp Identificateur.cpp Occurrences.cpp RefCroisees.
 OBJFILES=Fichier.o Flot.o Identificateur.o Occurrences.o RefCroisees.o
 ## Conf de compilation
 CC=g++
-CFLAGS=-W -Wall
+CFLAGS=-W -Wall -g
 
 all : $(NOM_EXEC)
 	mv $(NOM_EXEC) bin/$(NOMLIVRABLE)
