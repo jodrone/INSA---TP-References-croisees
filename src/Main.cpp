@@ -30,7 +30,8 @@ int main ( int argc,const char* argv[] )
 // Algorithme : Traitement trivial des arguments
 // En cas d'erreur, on renvoie un message d'erreur + Usage()
 {
-	//Index de l'argument trait�
+	// TODO : REFACTORING
+	//Index de l'argument traite
 	int indexArg = 1;
 	int i;
 	
@@ -39,14 +40,14 @@ int main ( int argc,const char* argv[] )
 	Flot monFlot;
 	RefCroisees mesRefCroisees;
 	string maListeID;
-	bool optionExclure;
+	bool optionExclure = false;
 
 	switch ( argc )
 	{
 		case 1 :
 			Usage ( "Liste d'arguments vide" ) ;
 			return ARG_ERROR;
-			break;
+		break;
 
 
 		case 2 : // Soit -k et pas de fichier soit pas d'options
@@ -57,32 +58,40 @@ int main ( int argc,const char* argv[] )
 					return ARG_ERROR;
 				}
 			else
-			 	{ //On a notre fichier � traiter
+			 	{ //On a notre fichier a traiter
 					myKeywordFile = argv[1];
 					maListeID = monFlot.ChercherId(myKeywordFile, mesRefCroisees);
 				}
-			break;
+		break;
 
 
 		case 3 :
 			// Cas d'erreur :
-			// -k + le fichier de mots cl�s (pas de fichier � traiter)
+			// -k + le fichier de mots cles (pas de fichier a traiter)
 			monArgTemporaire = argv[1];
-			if ( monArgTemporaire == "-k" )
-				{
+			switch ( monArgTemporaire )
+			{
+				case "-k" :
 					Usage ( "Pas de fichier a traiter" );
 					return ARG_ERROR;
-				}
+				break;
 
-			for ( i=1; i < argc; i++ )
-				{
-					cout << argv[i] << endl;
-				}
-			break;
+				case "-e" :
+					optionExclure = TRUE;
+					myKeywordFile = argv[2];
+					maListeID = monFlot.ChercherId(myKeywordFile, mesRefCroisees);
+				break;
+
+				default :
+					myKeywordFile = argv[2];
+					maListeID = monFlot.ChercherId(myKeywordFile, mesRefCroisees);
+				break;
+			}
+		break;
 
 		default :
 			cout << "Tiens, voila du caca" << endl;
-			break;
+		break;
 
 	}
 
