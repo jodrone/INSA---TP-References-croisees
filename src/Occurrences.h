@@ -29,10 +29,11 @@ class Occurrences
 
 public:
 //----------------------------------------------------- Méthodes publiques
-	void AjouterOccurrence ( string nomFic, int numLigne );
-	// Mode d'emploi :
+	bool AjouterOccurrence ( string nomFic, int numLigne );
+	// Mode d'emploi : ajoute une occurence. Retourne faux si occurrence déjà
+	// existante et vrai sinon.
 	//
-	// Contrat :
+	// Contrat : numLigne > 0
 	//
 
   	// Fonction();

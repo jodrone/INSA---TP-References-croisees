@@ -22,21 +22,28 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-// /!\ A terminer
-void Occurrences::AjouterOccurrence ( string nomFic, int numLigne )
+bool Occurrences::AjouterOccurrence ( string nomFic, int numLigne )
 // Algotithme : Appel de AddLigne
 {
-
 	vector<Fichier>::iterator it;
+	Fichier fichierRecherche(nomFic);
 
-	it = find (vecOcc.begin(), vecOcc.end(), nomFic);
+	it = find (vecOcc.begin(), vecOcc.end(), fichierRecherche);
 
 	// Si rien trouvé
 	if ( it == vecOcc.end() )
 	{
 		Fichier fichier( nomFic );
-		vecOcc.push_back ( fichier ); 
+		fichier.AddLigne (numLigne);
+		vecOcc.push_back ( fichier );
+		return true;
 	}
+	// si trouvé
+	else
+	{
+		return *it->AddLigne( numLigne );
+	}
+
 } // ----- Fin de AddOccurrence
 
 //-------------------------------------------- Constructeurs - destructeur

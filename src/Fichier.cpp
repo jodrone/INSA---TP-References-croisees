@@ -42,6 +42,13 @@ bool Fichier::AddLigne( int numLigne )
 	}
 } // ----- Fin de AddLigne
 
+bool Fichier::operator==(Fichier const & unFichier)
+// Algotithme : Trivial
+{
+	if (nomFic == unFichier.nomFic) return true;
+	else return false;
+} // ----- Fin de operator==
+
 //-------------------------------------------- Constructeurs - destructeur
 Fichier::Fichier ( string unNom )
 // Algorithme : Trivial

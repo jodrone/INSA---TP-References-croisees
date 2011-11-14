@@ -30,6 +30,12 @@ class Fichier
 
 public:
 //----------------------------------------------------- Méthodes publiques
+	bool operator==(Fichier const & unFichier);
+	// Mode d'emploi : renvoie vrai si fichier1 est égal à fichier2
+	//
+	// Contrat : le test ne ce fait que sur l'attribut nomFic !
+	//
+
 	bool AddLigne( int numLigne );
 	// Mode d'emploi : Ajoute un numéro de ligne au vecteur de numéros de 
 	// lignes. Incrémente nbNumLignes. 

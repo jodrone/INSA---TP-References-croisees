@@ -30,7 +30,12 @@ class Identificateur
 
 public:
 //----------------------------------------------------- Méthodes publiques
-	
+	void AjouterOccurrence( string nomFic , int numLigne);
+	// Mode d'emploi : Ajoute une occurence à l'identificateur
+	//
+	// Contrat : numLigne > 0
+	//
+
   	// Fonction();
 	// Mode d'emploi :
 	//
@@ -39,10 +44,6 @@ public:
 
 //-------------------------------------------- Constructeurs - destructeur
 
-//------------------------------------------------------------------ PRIVE 
-protected:
-//----------------------------------------------------- Méthodes protégées	
-
 	Identificateur ( const Identificateur & unIdentificateur );
 	// Mode d'emploi (constructeur de copie) : construit une copie de 
 	// unIdentificateur
@@ -50,7 +51,7 @@ protected:
 	// Contrat :
 	//
 
-	Identificateur ( );
+	Identificateur ( string monNom );
 	// Mode d'emploi :
 	//
 	// Contrat :
@@ -61,6 +62,10 @@ protected:
 	//
 	// Contrat :
 	//
+
+//------------------------------------------------------------------ PRIVE 
+protected:
+//----------------------------------------------------- Méthodes protégées	
 
 //----------------------------------------------------- Attributs protégés
 
