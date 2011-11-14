@@ -21,7 +21,7 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-void AddReference(string id, int numLigne)
+void RefCroisees::AddReference(string id, int numLigne)
 // Algorithme :
 {
 }
@@ -30,11 +30,16 @@ void AddReference(string id, int numLigne)
 RefCroisees::RefCroisees ( )
 // Algorithme : Trivial
 {
+	 
 }
 
 RefCroisees::~RefCroisees ( )
 // Algorithme : Trivial
 {
+	#if defined ( MAP ) 
+		cout << "Appel du destructeur de RefCroisees" << endl;
+	#endif
+	
 }
 
 

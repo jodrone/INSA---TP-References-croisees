@@ -52,7 +52,7 @@ public:
 	// Contrat :
 	//
 
-	RefCroisees ( );
+	RefCroisees ();
 	// Mode d'emploi :
 	//
 	// Contrat :
@@ -69,7 +69,7 @@ protected:
 
 //----------------------------------------------------- Attributs protégés
 
-	set<Identificateur> arbreId;
+	//set<Identificateur> arbreId;
 };
 
 //----------------------- Autres définitions dépendantes de <RefCroisees>
