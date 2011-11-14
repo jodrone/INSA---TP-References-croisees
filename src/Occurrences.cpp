@@ -25,14 +25,14 @@ using namespace std;
 	Occurrences::Occurrences ( )
 	// Algorithme : Trivial
 	{
-		vecOcc[0].Fichier("truc");
+	//	vecOcc[0].Fichier("truc");
 
 	}
 
 	Occurrences::Occurrences ( const Occurrences & uneOccurrences )
 	// Algorithme : Trivial
 	{
-		vecOcc = uneOccurrences.vecOcc;
+	//	vecOcc = uneOccurrences.vecOcc;
 	}
 
 	Occurrences::~Occurrences ( )

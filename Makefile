@@ -8,6 +8,7 @@
 NUM_BINOME=B3213
 DOSSIER_SOURCE=src
 NOM_EXEC=Main
+NOMLIVRABLE=refCroisees
 DEPENDANCES=Fichier.cpp Flot.cpp Identificateur.cpp Occurrences.cpp RefCroisees.cpp
 OBJFILES=Fichier.o Flot.o Identificateur.o Occurrences.o RefCroisees.o
 ## Conf de compilation
@@ -15,6 +16,7 @@ CC=g++
 CFLAGS=-W -Wall
 
 all : $(NOM_EXEC)
+	mv $(NOM_EXEC) bin/$(NOMLIVRABLE)
 
 #Construction de l'exécutable
 $(NOM_EXEC) :  $(OBJFILES) $(NOM_EXEC).o

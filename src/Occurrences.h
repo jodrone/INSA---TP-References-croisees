@@ -63,7 +63,7 @@ protected:
 
 //----------------------------------------------------- Attributs protégés
 	vector <Fichier> vecOcc;
-	Fichier unFichier;
+	//Fichier unFichier;
 };
 
 //----------------------- Autres définitions dépendantes de <Occurrences>
