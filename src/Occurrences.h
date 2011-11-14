@@ -38,10 +38,6 @@ public:
 
 //-------------------------------------------- Constructeurs - destructeur
 
-//------------------------------------------------------------------ PRIVE 
-protected:
-//----------------------------------------------------- Méthodes protégées	
-
 	Occurrences ( const Occurrences & uneOccurrences );
 	// Mode d'emploi (constructeur de copie) : construit une copie de 
 	// uneOccurrences
@@ -55,14 +51,19 @@ protected:
 	// Contrat :
 	//
 
-    virtual ~Occurrences ( );
+    ~Occurrences ( );
 	// Mode d'emploi (destructeur) :
 	//
 	// Contrat :
 	//
 
+//------------------------------------------------------------------ PRIVE 
+protected:
+//----------------------------------------------------- Méthodes protégées	
+
 //----------------------------------------------------- Attributs protégés
 	vector <Fichier> vecOcc;
+	Fichier unFichier;
 };
 
 //----------------------- Autres définitions dépendantes de <Occurrences>

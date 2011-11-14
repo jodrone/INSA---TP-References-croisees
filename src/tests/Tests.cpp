@@ -12,7 +12,7 @@
 using namespace std;
 #include <iostream>
 //------------------------------------------------------ Include personnel
-#include "tests.h"
+#include "Tests.h"
 #include "../RefCroisees.h"
 #include "../Flot.h"
 
