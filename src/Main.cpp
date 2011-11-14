@@ -36,6 +36,7 @@ int main ( int argc,const char* argv[] )
 	int i;
 	
 	string myKeywordFile;
+	string myIDFile;
 	string monArgTemporaire;
 	Flot monFlot;
 	RefCroisees mesRefCroisees;
@@ -78,8 +79,9 @@ int main ( int argc,const char* argv[] )
 				}
 			else
 			 	{ //On a notre fichier a traiter
-					myKeywordFile = argv[1];
-					maListeID = monFlot.ChercherId(myKeywordFile,
+					//TODO : charger les mots clés C++
+					myIDFile = argv[1];
+					maListeID = monFlot.ChercherId(myIDFile,
 													mesRefCroisees);
 				}
 		break;
@@ -99,17 +101,18 @@ int main ( int argc,const char* argv[] )
 			if (monArgTemporaire == "-e" )
 				{
 					optionExclure = true;
+					//TODO : récupérer les mots clés du C++
 					//On recupere les identifiants dans le fichier concerné
-					myKeywordFile = argv[2];
-					maListeID = monFlot.ChercherId(myKeywordFile,
+					myIDFile = argv[2];
+					maListeID = monFlot.ChercherId(myIDFile,
 													mesRefCroisees);
 				}
 			else
 				{
 					//On récupère les identifiants dans les deux fichiers
 					for ( i = 1; i < argc; i++)
-					myKeywordFile = argv[i];
-					maListeID = monFlot.ChercherId(myKeywordFile,
+					myIDFile = argv[i];
+					maListeID = monFlot.ChercherId(myIDFile,
 													mesRefCroisees);
 				}
 
@@ -139,8 +142,8 @@ int main ( int argc,const char* argv[] )
 			//Et on récupère les identifiants de tout le reste
 			for ( i = indexArg; i < argc; i++ )
 				{
-					myKeywordFile = argv[i];
-					maListeID = monFlot.ChercherId(myKeywordFile,
+					myIDFile = argv[i];
+					maListeID = monFlot.ChercherId(myIDFile,
 												mesRefCroisees);
 				}
 		break;
@@ -154,14 +157,14 @@ int main ( int argc,const char* argv[] )
 void Usage ( string aPhrase )
 //Algorithme : Trivial
 {
-	cout << "Erreur : " << aPhrase << endl;
-	cout << "Usage : refCroisees [ -k fichier_keyword ] -e fichier1  ... fichier_n " << endl;
-	cout << "Usage : refCroisees [ -k fichier_keyword ] fichier1 ... fichier_n" << endl;
-	cout << "Options : " << endl;
-	cout << " -k : permet d'indiquer le fichier de mots cles a utiliser" << endl;
-	cout << "Si -k est absent, les mots cles du C++ sont utilises par defaut " << endl;
-	cout << " -e : permet d'exclure les mots cles " << endl;
-	cout << " License DWTFYWPL. Copyleft 2011 par T.Pourcelot & J.Vincent" << endl;
+	cerr << "Erreur : " << aPhrase << endl;
+	cerr << "Usage : refCroisees [ -k fichier_keyword ] -e fichier1  ... fichier_n " << endl;
+	cerr << "Usage : refCroisees [ -k fichier_keyword ] fichier1 ... fichier_n" << endl;
+	cerr << "Options : " << endl;
+	cerr << " -k : permet d'indiquer le fichier de mots cles a utiliser" << endl;
+	cerr << "Si -k est absent, les mots cles du C++ sont utilises par defaut " << endl;
+	cerr << " -e : permet d'exclure les mots cles " << endl;
+	cerr << " License DWTFYWPL. Copyleft 2011 par T.Pourcelot & J.Vincent" << endl;
 
 } //----- fin de Usage
 
