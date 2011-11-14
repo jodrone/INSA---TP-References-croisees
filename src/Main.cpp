@@ -1,14 +1,14 @@
 /*************************************************************************
                            Main  - Programme Principal
                              -------------------
-    début                : ...
+    dï¿½but                : ...
 copyright            : (C) 2011 par Tristan Pourcelot & Jordan Vincent
 *************************************************************************/
 
-//---------- Réalisation de la tâche <Main> (fichier Main.cpp) ---
+//---------- Rï¿½alisation de la tï¿½che <Main> (fichier Main.cpp) ---
 
 /////////////////////////////////////////////////////////////////  INCLUDE
-//-------------------------------------------------------- Include système
+//-------------------------------------------------------- Include systï¿½me
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -21,7 +21,7 @@ using namespace std;
 
 ///////////////////////////////////////////////////////////////////  PRIVE
 //------------------------------------------------------------- Constantes
-
+#define ARG_ERROR 42
 //------------------------------------------------------------------ Types
 
 //////////////////////////////////////////////////////////////////  PUBLIC
@@ -30,7 +30,7 @@ int main ( int argc,const char* argv[] )
 // Algorithme : Traitement trivial des arguments
 // En cas d'erreur, on renvoie un message d'erreur + Usage()
 {
-	//Index de l'argument traité
+	//Index de l'argument traitï¿½
 	int indexArg = 1;
 	int i;
 	
@@ -39,12 +39,13 @@ int main ( int argc,const char* argv[] )
 	Flot monFlot;
 	RefCroisees mesRefCroisees;
 	string maListeID;
+	bool optionExclure;
 
 	switch ( argc )
 	{
 		case 1 :
 			Usage ( "Liste d'arguments vide" ) ;
-			return 42;
+			return ARG_ERROR;
 			break;
 
 
@@ -52,23 +53,41 @@ int main ( int argc,const char* argv[] )
 			monArgTemporaire = argv [ 1 ];
 			if ( monArgTemporaire == "-k" || monArgTemporaire == "-e" )
 				{
-					Usage ( "Indiquez un fichier à traiter" );
+					Usage ( "Pas de fichier a traiter..." );
+					return ARG_ERROR;
 				}
 			else
-			 	{ //On a notre fichier à traiter
+			 	{ //On a notre fichier ï¿½ traiter
 					myKeywordFile = argv[1];
 					maListeID = monFlot.ChercherId(myKeywordFile, mesRefCroisees);
 				}
+			break;
 
+
+		case 3 :
+			// Cas d'erreur :
+			// -k + le fichier de mots clï¿½s (pas de fichier ï¿½ traiter)
+			monArgTemporaire = argv[1];
+			if ( monArgTemporaire == "-k" )
+				{
+					Usage ( "Pas de fichier a traiter" );
+					return ARG_ERROR;
+				}
+
+			for ( i=1; i < argc; i++ )
+				{
+					cout << argv[i] << endl;
+				}
+			break;
+
+		default :
+			cout << "Tiens, voila du caca" << endl;
+			break;
 
 	}
 
-	/*string	adresseFichiers("src/fichiers/");
 
-	listeId = monFlot.ChercherId(adresseFichiers+="source.txt", mesRefCroisees);
-	*/
 	return 0;
-
 
 } //----- fin de Main 
 
@@ -84,6 +103,7 @@ void Usage ( string aPhrase )
 	cout << "Si -k est absent, les mots cles du C++ sont utilises par defaut " << endl;
 	cout << " -e : permet d'exclure les mots cles " << endl;
 	cout << " License DWTFYWPL. Copyleft 2011 par T.Pourcelot & J.Vincent" << endl;
+
 } //----- fin de Usage
 
 //----- Fin de Main.cpp
