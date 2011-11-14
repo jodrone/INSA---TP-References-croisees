@@ -32,7 +32,8 @@ public:
 //----------------------------------------------------- Méthodes publiques
 	bool AddLigne( int numLigne );
 	// Mode d'emploi : Ajoute un numéro de ligne au vecteur de numéros de 
-	// lignes. Incrémente nbNumLignes.
+	// lignes. Incrémente nbNumLignes. 
+	// Renvoie faux si numéro déja existant, vrai sinon.
 	//
 	// Contrat : numLigne est strictement positif.
 	//			 les numéros sont supposés triés par ordre croissant et

@@ -29,7 +29,12 @@ class Occurrences
 
 public:
 //----------------------------------------------------- Méthodes publiques
-	
+	void AjouterOccurrence ( string nomFic, int numLigne );
+	// Mode d'emploi :
+	//
+	// Contrat :
+	//
+
   	// Fonction();
 	// Mode d'emploi :
 	//

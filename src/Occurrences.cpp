@@ -11,6 +11,7 @@
 
 //-------------------------------------------------------- Include système
 using namespace std;
+#include <algorithm>
 
 //------------------------------------------------------ Include personnel
 #include "Occurrences.h"
@@ -20,6 +21,23 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
+
+// /!\ A terminer
+void Occurrences::AjouterOccurrence ( string nomFic, int numLigne )
+// Algotithme : Appel de AddLigne
+{
+
+	vector<Fichier>::iterator it;
+
+	it = find (vecOcc.begin(), vecOcc.end(), nomFic);
+
+	// Si rien trouvé
+	if ( it == vecOcc.end() )
+	{
+		Fichier fichier( nomFic );
+		vecOcc.push_back ( fichier ); 
+	}
+} // ----- Fin de AddOccurrence
 
 //-------------------------------------------- Constructeurs - destructeur
 
