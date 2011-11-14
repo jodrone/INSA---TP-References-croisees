@@ -32,7 +32,7 @@ using namespace std;
 	Occurrences::Occurrences ( const Occurrences & uneOccurrences )
 	// Algorithme : Trivial
 	{
-		vecOcc = uneOccurrences.vecOcc;
+		//vecOcc = uneOccurrences.vecOcc;
 	}
 
 	Occurrences::~Occurrences ( )
