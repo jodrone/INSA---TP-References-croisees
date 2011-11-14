@@ -30,7 +30,15 @@ class Fichier
 
 public:
 //----------------------------------------------------- Méthodes publiques
-	
+	bool AddLigne( int numLigne );
+	// Mode d'emploi : Ajoute un numéro de ligne au vecteur de numéros de 
+	// lignes. Incrémente nbNumLignes.
+	//
+	// Contrat : numLigne est strictement positif.
+	//			 les numéros sont supposés triés par ordre croissant et
+	// numLigne est supposé être plus grand que tous les numéros du vector
+	//
+
   	// Fonction();
 	// Mode d'emploi :
 	//
@@ -39,28 +47,29 @@ public:
 
 //-------------------------------------------- Constructeurs - destructeur
 
-//------------------------------------------------------------------ PRIVE 
-protected:
-//----------------------------------------------------- Méthodes protégées	
-	
-	Fichier ( const Fichier & unFichier );
+	Fichier( const Fichier & unFichier );
 	// Mode d'emploi (constructeur de copie) : construit une copie de 
 	// unFichier
 	//
 	// Contrat :
 	//
 
-	Fichier ( );
-	// Mode d'emploi :
+	Fichier ( string unNom );
+	// Mode d'emploi : constructeur 
 	//
 	// Contrat :
 	//
 
-    virtual ~Fichier ( );
+    ~Fichier ( );
 	// Mode d'emploi (destructeur) :
 	//
 	// Contrat :
 	//
+
+//------------------------------------------------------------------ PRIVE 
+protected:
+//----------------------------------------------------- Méthodes protégées	
+	
 //----------------------------------------------------- Attributs protégés
 
 	string nomFic;

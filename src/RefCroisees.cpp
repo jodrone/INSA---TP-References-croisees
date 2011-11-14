@@ -30,7 +30,7 @@ void RefCroisees::AddReference(string id, int numLigne)
 RefCroisees::RefCroisees ( )
 // Algorithme : Trivial
 {
-	 
+
 }
 
 RefCroisees::~RefCroisees ( )
