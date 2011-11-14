@@ -1,15 +1,15 @@
 /*************************************************************************
                            Identificateur  -  description
                              -------------------
-    début                : ...
+    debut                : Nov. 2011
     copyright            : (C) 2011 par Tristan Pourcelot & Jordan Vincent 
 *************************************************************************/
 
-//-- Réalisation de la classe <Identificateur> (fichier Identificateur.cpp) ----
+//-- Realisation de la classe <Identificateur> (fichier Identificateur.cpp) ----
 
 //---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include système
+//-------------------------------------------------------- Include systeme
 using namespace std;
 
 //------------------------------------------------------ Include personnel
@@ -19,7 +19,7 @@ using namespace std;
 
 //----------------------------------------------------------------- PUBLIC
 
-//----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- Methodes publiques
 
 bool Identificateur::AjouterOccurrence( string nomFic , int numLigne)
 // Algorithme :
@@ -63,4 +63,4 @@ Identificateur::~Identificateur ( )
 
 //------------------------------------------------------------------ PRIVE
 
-//----------------------------------------------------- Méthodes protégées
+//----------------------------------------------------- Methodes protegees

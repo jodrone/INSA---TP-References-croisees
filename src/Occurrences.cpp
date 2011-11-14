@@ -1,15 +1,15 @@
 /*************************************************************************
                            Occurrences  -  description
                              -------------------
-    début                : ...
+    debut                : Nov. 2011
     copyright            : (C) 2011 par Tristan Pourcelot & Jordan Vincent 
 *************************************************************************/
 
-//-- Réalisation de la classe <Occurrences> (fichier Occurrences.cpp) ----
+//-- Realisation de la classe <Occurrences> (fichier Occurrences.cpp) ----
 
 //---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include système
+//-------------------------------------------------------- Include systeme
 using namespace std;
 #include <algorithm>
 
@@ -20,17 +20,17 @@ using namespace std;
 
 //----------------------------------------------------------------- PUBLIC
 
-//----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- Methodes publiques
 
 bool Occurrences::AjouterOccurrence ( string nomFic, int numLigne )
-// Algotithme : Appel de AddLigne
+// Algorithme : Appel de AddLigne
 {
 	vector<Fichier>::iterator it;
 	Fichier fichierRecherche(nomFic);
 
 	it = find (vecOcc.begin(), vecOcc.end(), fichierRecherche);
 
-	// Si rien trouvé
+	// Si rien trouve
 	if ( it == vecOcc.end() )
 	{
 		Fichier fichier( nomFic );
@@ -38,7 +38,7 @@ bool Occurrences::AjouterOccurrence ( string nomFic, int numLigne )
 		vecOcc.push_back ( fichier );
 		return true;
 	}
-	// si trouvé
+	// si trouve
 	else
 	{		
 		return it->AddLigne( numLigne );
@@ -66,7 +66,7 @@ Occurrences::Occurrences ( const Occurrences & uneOccurrences )
 } // ----- Fin de Occurrences (constructeur de copie)
 
 Occurrences::~Occurrences ( )
-// Algorithme : Appel de destructeur de Fichier sur chaque élément
+// Algorithme : Appel de destructeur de Fichier sur chaque element
 {
 #if defined ( MAP ) 
 	cout << "Appel du destructeur de Occurrences" << endl;
@@ -76,4 +76,4 @@ Occurrences::~Occurrences ( )
 
 //------------------------------------------------------------------ PRIVE
 
-//----------------------------------------------------- Méthodes protégées
+//----------------------------------------------------- Methodes protegees

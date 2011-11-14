@@ -1,7 +1,7 @@
 /*************************************************************************
                            Flot  -  description
                              -------------------
-    début                : ...
+    debut                : ...
     copyright            : (C) 2011 par Tristan Pourcelot & Jordan Vincent 
 *************************************************************************/
 
@@ -9,7 +9,7 @@
 #if ! defined ( FLOT_H )
 #define FLOT_H
 
-//--------------------------------------------------- Interfaces utilisées
+//--------------------------------------------------- Interfaces utilisees
 #include <string>
 #include "RefCroisees.h"
 //------------------------------------------------------------- Constantes 
@@ -17,9 +17,9 @@
 //------------------------------------------------------------------ Types 
 
 //------------------------------------------------------------------------ 
-// Rôle de la classe <Flot>
+// Role de la classe <Flot>
 // 
-// La classe Flot a pour rôle de lire et chercher les identificateurs dans 
+// La classe Flot a pour role de lire et chercher les identificateurs dans
 // les fichiers source.
 //
 //------------------------------------------------------------------------ 
@@ -29,12 +29,12 @@ class Flot
 //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- Methodes publiques
 	
 	string ChercherId(string nomFic, RefCroisees &desRefCroisees);
-	// Mode d'emploi : lit le fichier dont le chemin est passé en parametre
-	// et renvoie une string contenant les identificateurs valides séparés
-	// par le caractère '\n'
+	// Mode d'emploi : lit le fichier dont le chemin est passe en parametre
+	// et renvoie une string contenant les identificateurs valides separes
+	// par le caractere '\n'
 	//
 	// contrat :
 	//
@@ -42,7 +42,7 @@ public:
 	string FindNextId(string &phrase);
 	// Mode d'emploi : renvoie le premier mot de la phrase et le supprime 
 	// de la phrase.
-	// Il supprime également les commentaires et les chaines de caractères
+	// Il supprime egalement les commentaires et les chaines de caracteres
 	//
 	// Contrat :
 	//
@@ -50,7 +50,7 @@ public:
 	bool IdValide( string nomId );
 	// Mode d'emploi : renvoie vrai si nomId est un identificateur valide
 	//
-	// Contrat : nomId est composé de caractères alphanumériques et de '_'
+	// Contrat : nomId est compose de caracteres alphanumeriques et de '_'
 	//
 
   	// Fonction();
@@ -64,12 +64,12 @@ public:
 
 //------------------------------------------------------------------ PRIVE 
 protected:
-//----------------------------------------------------- Méthodes protégées	
+//----------------------------------------------------- Methodes protegees
 	
-//----------------------------------------------------- Attributs protégés
+//----------------------------------------------------- Attributs proteges
 
 };
 
-//----------------------- Autres définitions dépendantes de <Fichier>
+//----------------------- Autres definitions dependantes de <Fichier>
 
 #endif // FLOT_H

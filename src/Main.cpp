@@ -115,9 +115,9 @@ int main ( int argc,const char* argv[] )
 					indexArg = indexArg + 1 ;
 				}
 			//Et on récupère les identifiants de tout le reste
-			for ( indexArg; indexArg < argc; indexArg++ )
+			for ( i = indexArg; i < argc; i++ )
 				{
-					myKeywordFile = argv[indexArg];
+					myKeywordFile = argv[i];
 					maListeID = monFlot.ChercherId(myKeywordFile,
 												mesRefCroisees);
 				}

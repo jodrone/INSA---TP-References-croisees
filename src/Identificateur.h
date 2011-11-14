@@ -1,7 +1,7 @@
 /*************************************************************************
                            Identificateur  -  description
                              -------------------
-    début                : ...
+    debut                : Nov. 2011
     copyright            : (C) 2011 par Tristan Pourcelot & Jordan Vincent 
 *************************************************************************/
 
@@ -9,7 +9,7 @@
 #if ! defined ( IDENTIFICATEUR_H )
 #define IDENTIFICATEUR_H
 
-//--------------------------------------------------- Interfaces utilisées
+//--------------------------------------------------- Interfaces utilisees
 #include "Occurrences.h"
 #include <string>
 //------------------------------------------------------------- Constantes 
@@ -17,10 +17,10 @@
 //------------------------------------------------------------------ Types 
 
 //------------------------------------------------------------------------ 
-// Rôle de la classe <Identificateur>
+// Role de la classe <Identificateur>
 // 
-// La classe Identificateur a pour rôle de représenter un identificateur et 
-// ces occurrences associées.
+// La classe Identificateur a pour role de representer un identificateur et
+// ses occurrences associees.
 //
 //------------------------------------------------------------------------ 
 
@@ -29,10 +29,10 @@ class Identificateur
 //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- Methodes publiques
 	bool AjouterOccurrence( string nomFic , int numLigne);
-	// Mode d'emploi : Ajoute une occurence à l'identificateur.
-	// Retourne faux si occurrence déjà existante, vrai sinon.
+	// Mode d'emploi : Ajoute une occurence a l'identificateur.
+	// Retourne faux si occurrence deja existante, vrai sinon.
 	//
 	// Contrat : numLigne > 0
 	//
@@ -66,14 +66,14 @@ public:
 
 //------------------------------------------------------------------ PRIVE 
 protected:
-//----------------------------------------------------- Méthodes protégées	
+//----------------------------------------------------- Methodes protegees
 
-//----------------------------------------------------- Attributs protégés
+//----------------------------------------------------- Attributs protï¿½gï¿½s
 
 	string nomId;
 	Occurrences *occId;
 };
 
-//----------------------- Autres définitions dépendantes de <Identificateur>
+//----------------------- Autres definitions dependantes de <Identificateur>
 
 #endif // IDENTIFICATEUR_H

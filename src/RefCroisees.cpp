@@ -1,15 +1,15 @@
 /*************************************************************************
                            RefCroisees  -  description
                              -------------------
-    début                : ...
+    debut                : Nov. 2011
     copyright            : (C) 2011 par Tristan Pourcelot & Jordan Vincent 
 *************************************************************************/
 
-//-- Réalisation de la classe <RefCroisees> (fichier RefCroisees.cpp) ----
+//-- Realisation de la classe <RefCroisees> (fichier RefCroisees.cpp) ----
 
 //---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include système
+//-------------------------------------------------------- Include systeme
 using namespace std;
 
 //------------------------------------------------------ Include personnel
@@ -20,7 +20,7 @@ using namespace std;
 
 //----------------------------------------------------------------- PUBLIC
 
-//----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- Methodes publiques
 void RefCroisees::AddReference(string id, int numLigne)
 // Algorithme :
 {
@@ -54,4 +54,4 @@ RefCroisees::~RefCroisees ( )
 
 //------------------------------------------------------------------ PRIVE
 
-//----------------------------------------------------- Méthodes protégées
+//----------------------------------------------------- Methodes protegees

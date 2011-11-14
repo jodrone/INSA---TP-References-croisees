@@ -1,7 +1,7 @@
 /*************************************************************************
                            Occurrences  -  description
                              -------------------
-    début                : ...
+    debut                : Nov. 2011
     copyright            : (C) 2011 par Tristan Pourcelot & Jordan Vincent 
 *************************************************************************/
 
@@ -9,16 +9,16 @@
 #if ! defined ( OCCURRENCES_H )
 #define OCCURRENCES_H
 
-//--------------------------------------------------- Interfaces utilisées
+//--------------------------------------------------- Interfaces utilisees
 #include "Fichier.h"
 //------------------------------------------------------------- Constantes 
 
 //------------------------------------------------------------------ Types 
 
 //------------------------------------------------------------------------ 
-// Rôle de la classe <Occurrences>
+// Role de la classe <Occurrences>
 // 
-// La classe Occurrences a pour rôle de contenir toutes les occurrences d'un 
+// La classe Occurrences a pour role de contenir toutes les occurrences d'un
 // identificateur.
 //
 //------------------------------------------------------------------------ 
@@ -28,9 +28,9 @@ class Occurrences
 //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- Methodes publiques
 	bool AjouterOccurrence ( string nomFic, int numLigne );
-	// Mode d'emploi : ajoute une occurence. Retourne faux si occurrence déjà
+	// Mode d'emploi : ajoute une occurence. Retourne faux si occurrence deja
 	// existante et vrai sinon.
 	//
 	// Contrat : numLigne > 0
@@ -65,12 +65,12 @@ public:
 
 //------------------------------------------------------------------ PRIVE 
 protected:
-//----------------------------------------------------- Méthodes protégées	
+//----------------------------------------------------- Methodes protegees
 
-//----------------------------------------------------- Attributs protégés
+//----------------------------------------------------- Attributs proteges
 	vector <Fichier> vecOcc;
 };
 
-//----------------------- Autres définitions dépendantes de <Occurrences>
+//----------------------- Autres definitions dependantes de <Occurrences>
 
 #endif // OCCURRENCES_H

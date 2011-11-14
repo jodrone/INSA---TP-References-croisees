@@ -1,15 +1,15 @@
 /*************************************************************************
                            Flot  -  description
                              -------------------
-    début                : ...
+    debut                : Nov. 2011
     copyright            : (C) 2011 par Tristan Pourcelot & Jordan Vincent 
 *************************************************************************/
 
-//-- Réalisation de la classe <Flot> (fichier Flot.cpp) ----
+//-- Realisation de la classe <Flot> (fichier Flot.cpp) ----
 
 //---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include système
+//-------------------------------------------------------- Include systeme
 using namespace std;
 #include <iostream>
 #include <fstream>
@@ -20,7 +20,7 @@ using namespace std;
 
 //----------------------------------------------------------------- PUBLIC
 
-//----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- Methodes publiques
 
 string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
 // Algorithme : parcours du fichier, ligne par ligne
@@ -60,7 +60,7 @@ string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
 } //----- Fin de ChercherId
 
 string Flot::FindNextId(string &phrase)
-// Algorithme : parcours de phrase jusqu'à trouver un caractère spécial
+// Algorithme : parcours de phrase jusqu'a trouver un caractere special
 {
 	string	mot;
 	int		i(0),j(0);
@@ -72,14 +72,14 @@ string Flot::FindNextId(string &phrase)
 		lettre = phrase[i];
 	}
 
-	// Fin de phrase ne se terminant pas par un séparateur
+	// Fin de phrase ne se terminant pas par un separateur
 	if ( isalnum(lettre) || lettre == '_') i++;
 
 	mot = phrase.substr(0,i);
 
 	// Cas des commentaires
 	if (lettre == '/' && phrase[i+1] == '/') phrase.erase(0,phrase.length());
-	// Cas des chaines de caractères
+	// Cas des chaines de caracteres
 	else if (lettre == '"' && i < phrase.length()-1)
 	{
 		i++;
@@ -94,7 +94,7 @@ string Flot::FindNextId(string &phrase)
 	// cas general
 	else phrase.erase(0,i);
 
-	// Début de phrase commençant par un séparateur
+	// Debut de phrase commencant par un separateur
 	if (i == 0) phrase.erase(0,1);
 
 	return mot;
