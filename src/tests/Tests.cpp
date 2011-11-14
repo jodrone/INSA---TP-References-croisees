@@ -12,7 +12,7 @@
 using namespace std;
 #include <iostream>
 //------------------------------------------------------ Include personnel
-#include "tests.h"
+#include "Tests.h"
 #include "../RefCroisees.h"
 #include "../Flot.h"
 
@@ -41,7 +41,7 @@ int main ( )
 {
 // Algorithme :
 //
-	string	adresseFichiers("C:/Users/Jo/Documents/INSA/3IF/TP/TP-references-croisees/INSA---TP-References-croisees/src/fichiers/");
+	string	adresseFichiers("../fichiers/");
 	string	listeId;
 	int		a;
 
