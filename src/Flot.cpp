@@ -28,8 +28,9 @@ string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
 	string id,ligne,listeId;
 	const char SEPARATOR('\n');
 	int numLigne(0);
+	
 
-	ifstream fichier(nomFic, ios::in);
+	ifstream fichier(nomFic.c_str(), ios::in);
 
 	if (fichier)
 	{

@@ -41,7 +41,7 @@ int main ( )
 {
 // Algorithme :
 //
-	string	adresseFichiers("../fichiers/");
+	string	adresseFichiers("fichiers/");
 	string	listeId;
 	int		a;
 
