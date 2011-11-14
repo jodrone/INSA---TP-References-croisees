@@ -31,6 +31,13 @@ class RefCroisees
 public:
 //----------------------------------------------------- Méthodes publiques
 	
+	void AddReference(string id, int numLigne);
+	// Mode d'emploi : Ajoute une référence à l'arbre. Si l'identificateur est
+	// inconnu, il est créé. L'occurence est ajoutée.
+	//
+	// Contrat : numLigne > 0
+	//
+
   	// Fonction();
 	// Mode d'emploi :
 	//
@@ -38,11 +45,6 @@ public:
 	//
 
 //-------------------------------------------- Constructeurs - destructeur
-
-//------------------------------------------------------------------ PRIVE 
-protected:
-//----------------------------------------------------- Méthodes protégées	
-
 	RefCroisees ( const RefCroisees & uneRefCroisees );
 	// Mode d'emploi (constructeur de copie) : construit une copie de 
 	// uneRefCroisees
@@ -56,11 +58,15 @@ protected:
 	// Contrat :
 	//
 
-    virtual ~RefCroisees ( );
+    ~RefCroisees ( );
 	// Mode d'emploi (destructeur) :
 	//
 	// Contrat :
 	//
+//------------------------------------------------------------------ PRIVE 
+protected:
+//----------------------------------------------------- Méthodes protégées	
+
 //----------------------------------------------------- Attributs protégés
 
 	set<Identificateur> arbreId;

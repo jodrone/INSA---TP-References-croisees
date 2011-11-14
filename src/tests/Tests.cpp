@@ -41,11 +41,15 @@ int main ( )
 {
 // Algorithme :
 //
-	string adresseFichiers("C:/Users/Jo/Documents/INSA/3IF/TP/TP-references-croisees/INSA---TP-References-croisees/src/fichiers/");
-	int a;
-	string listeId;
-	Flot flot1;
-	listeId = flot1.ChercherId(adresseFichiers+="source.txt");
+	string	adresseFichiers("C:/Users/Jo/Documents/INSA/3IF/TP/TP-references-croisees/INSA---TP-References-croisees/src/fichiers/");
+	string	listeId;
+	int		a;
+
+	Flot		monFlot;
+	RefCroisees mesRefCroisees;
+
+	listeId = monFlot.ChercherId(adresseFichiers+="source.txt", mesRefCroisees);
+
 	cin >> a;
 
 } //----- fin de Main

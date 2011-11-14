@@ -21,8 +21,22 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
+void AddReference(string id, int numLigne)
+// Algorithme :
+{
+}
 
 //-------------------------------------------- Constructeurs - destructeur
+RefCroisees::RefCroisees ( )
+// Algorithme : Trivial
+{
+}
+
+RefCroisees::~RefCroisees ( )
+// Algorithme : Trivial
+{
+}
+
 
 //------------------------------------------------------------------ PRIVE
 
