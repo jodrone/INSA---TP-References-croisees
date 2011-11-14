@@ -31,6 +31,11 @@
 
 /////////////////////////////////////////////////////////////////  INCLUDE
 //--------------------------------------------------- Interfaces utilisées
+#include "RefCroisees.h"
+#include "Flot.h"
+
+
+
 
 //------------------------------------------------------------- Constantes 
 
@@ -44,11 +49,11 @@
 // Contrat :
 //
 
-int main ( int argc, char* argv[]);
+int main ( int argc,const char* argv[]);
 // Mode d'emploi :
 // Appel principal
 
-void Usage( string aPhrase = "" );
+void Usage( char* aPhrase[] = "" );
 // Mode d'emploi :
 // Affiche le mode d'emploi du programme, ainsi qu'un message d'erreur personnalisé
 
