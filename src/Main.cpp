@@ -15,25 +15,13 @@ copyright            : (C) 2011 par Tristan Pourcelot & Jordan Vincent
 using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Main.h"
-
+#include "RefCroisees.h"
+#include "Flot.h"
 
 ///////////////////////////////////////////////////////////////////  PRIVE
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
-
-//---------------------------------------------------- Variables statiques
-
-//------------------------------------------------------ Fonctions privées
-//static type nom ( liste de paramètres )
-// Mode d'emploi :
-//
-// Contrat :
-//
-// Algorithme :
-//
-//{
-//} //----- fin de nom
 
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
@@ -44,32 +32,35 @@ int main ( int argc,const char* argv[] )
   switch ( argc )
 	{
 		case 1 :
-		  Usage( "Erreur, liste d'arguments vide" );
-		  break;
-		case 2 :
-		  Usage( "Erreur : ");
-		  break;
+			Usage( "liste d'arguments vide" );
+			return 1;
+			break;
+		case 2 : //Sans option ou alors pas de fichiers
 
-		default :
-		Usage ( "Erreur generale" );
-		
+			break;
+
+		default :// Options & fichiers
+			return 0;
+			break;
 	
 	}
 
 
 
-} //----- fin de Nom
+} //----- fin de Main 
 
 
 void Usage ( string aPhrase )
 //Algorithme : Trivial
 {
-	cout << aPhrase << endl;
+	cout << "Erreur : " << aPhrase << endl;
 	cout << "Usage : refCroisees [ -k fichier_keyword ] -e fichier1  ... fichier_n " << endl;
 	cout << "Usage : refCroisees [ -k fichier_keyword ] fichier1 ... fichier_n" << endl;
 	cout << "Options : " << endl;
 	cout << " -k : permet d'indiquer le fichier de mots cles a utiliser" << endl;
 	cout << "Si -k est absent, les mots cles du C++ sont utilises par defaut " << endl;
-	cout << " -e : permet d'exclure les mots clés " << endl;
+	cout << " -e : permet d'exclure les mots cles " << endl;
 	cout << " License DWTFYWPL. Copyleft 2011 par T.Pourcelot & J.Vincent" << endl;
 } //----- fin de Usage
+
+//----- Fin de Main.cpp
