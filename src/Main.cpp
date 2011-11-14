@@ -46,6 +46,16 @@ int main ( int argc,const char* argv[] )
 			break;
 	}
 
+	string	adresseFichiers("src/fichiers/");
+	string	listeId;
+	int		a;
+
+	Flot		monFlot;
+	RefCroisees mesRefCroisees;
+
+	listeId = monFlot.ChercherId(adresseFichiers+="source.txt", mesRefCroisees);
+
+	cin >> a;
 
 
 } //----- fin de Main 

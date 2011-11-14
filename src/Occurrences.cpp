@@ -22,6 +22,7 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 
 //-------------------------------------------- Constructeurs - destructeur
+
 Occurrences::Occurrences ( )
 // Algorithme : Trivial
 {
