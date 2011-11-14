@@ -1,14 +1,14 @@
 /*************************************************************************
                            Main  - Programme Principal
                              -------------------
-    d�but                : ...
+    debut                : Nov. 2011
 copyright            : (C) 2011 par Tristan Pourcelot & Jordan Vincent
 *************************************************************************/
 
-//---------- R�alisation de la t�che <Main> (fichier Main.cpp) ---
+//---------- Realisation de la tache <Main> (fichier Main.cpp) ---
 
 /////////////////////////////////////////////////////////////////  INCLUDE
-//-------------------------------------------------------- Include syst�me
+//-------------------------------------------------------- Include systeme
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -41,6 +41,24 @@ int main ( int argc,const char* argv[] )
 	RefCroisees mesRefCroisees;
 	string maListeID;
 	bool optionExclure = false;
+	bool optionKeyWord = false;
+
+
+	//In case of^^
+    const int NB_MOTCLES = 63;
+    string mots[NB_MOTCLES] = {"asm", "auto", "bool", "break", "case", "catch", "char",
+                               "class", "const", "const_cast", "continue", "default",
+                               "delete", "do", "double", "dynamic_cast", "else", "enum",
+                               "explicit", "export", "extern", "false", "float", "for",
+                               "friend", "goto", "if", "inline", "int", "long", "mutable",
+                               "namespace", "new", "operator", "private", "protected",
+                               "public", "register", "reinterpret_cast", "return",
+                               "short", "signed", "sizeof", "static", "static_cast",
+                               "struct", "switch", "template", "this", "throw", "true",
+                               "try", "typedef", "typeid", "typename", "union", "unsigned",
+                               "using", "virtual", "void", "volatile", "wchar_t", "while"};
+
+
 
 	switch ( argc )
 	{
@@ -51,6 +69,7 @@ int main ( int argc,const char* argv[] )
 
 
 		case 2 : // Soit -k et pas de fichier soit pas d'options
+			// Dans tout les cas, on utilise les mots clés du CPP
 			monArgTemporaire = argv [ 1 ];
 			if ( monArgTemporaire == "-k" || monArgTemporaire == "-e" )
 				{
@@ -69,6 +88,7 @@ int main ( int argc,const char* argv[] )
 		case 3 :
 			// Cas d'erreur :
 			// -k + le fichier de mots cles (pas de fichier a traiter)
+			// Dans tout les cas, on utilise les mots clés du CPP
 			monArgTemporaire = argv[1];
 			if ( monArgTemporaire == "-k" )
 				{
@@ -101,10 +121,12 @@ int main ( int argc,const char* argv[] )
 			if ( monArgTemporaire == "-k" )
 				{
 					// On récupère les mots clés
+					optionKeyWord = true;
 					myKeywordFile = argv[indexArg + 1];
 					maListeID = monFlot.ChercherId(myKeywordFile,
 													mesRefCroisees);
-					indexArg = indexArg + 2 ; // On peut sauter un argument, vu qu'on vient de le récupérer
+					// On peut sauter un argument, on l'a traité
+					indexArg = indexArg + 2 ;
 				}
 
 			// En cas de modification de IndexArg suite à "-k"
