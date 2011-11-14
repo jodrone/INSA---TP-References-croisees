@@ -12,7 +12,7 @@
 //------------------------------------------------------------------------ 
 // Rôle de la tâche <Main>
 //
-//Cette tache assemble les briques du programme afin de permettre
+//Cette tache traite les arguments passés au programme afin de permettre
 //son utilisation globale de la maniere suivante :
 //
 //1.       refCroisees [-e] [-k fichier_mots_clés] [nomfichier]+
@@ -31,11 +31,6 @@
 
 /////////////////////////////////////////////////////////////////  INCLUDE
 //--------------------------------------------------- Interfaces utilisées
-#include "RefCroisees.h"
-#include "Flot.h"
-
-
-
 
 //------------------------------------------------------------- Constantes 
 
@@ -43,17 +38,13 @@
 
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
-// type Nom ( liste de paramètres );
-// Mode d'emploi :
-//
-// Contrat :
-//
 
-int main ( int argc,const char* argv[]);
+
+int main ( int argc,const char* argv[] );
 // Mode d'emploi :
 // Appel principal
 
-void Usage( char* aPhrase[] = "" );
+void Usage( string aPhrase = "" );
 // Mode d'emploi :
 // Affiche le mode d'emploi du programme, ainsi qu'un message d'erreur personnalisé
 
