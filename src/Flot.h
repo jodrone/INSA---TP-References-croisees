@@ -30,7 +30,7 @@ class Flot
 public:
 //----------------------------------------------------- Méthodes publiques
 	
-	string ChercherId(string nomFic);
+	string ChercherId(string nomFic, RefCroisees &desRefCroisees);
 	// Mode d'emploi : lit le fichier dont le chemin est passé en parametre
 	// et renvoie une string contenant les identificateurs valides séparés
 	// par le caractère '\n'

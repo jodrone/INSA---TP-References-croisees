@@ -23,11 +23,12 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-string Flot::ChercherId(string nomFic)
+string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
 // Algorithme : parcours du fichier, ligne par ligne
 {
 	string id,ligne,listeId;
 	const char SEPARATOR('\n');
+	int numLigne(0);
 
 	ifstream fichier(nomFic, ios::in);
 
@@ -36,6 +37,7 @@ string Flot::ChercherId(string nomFic)
 		cout << "/// Ouverture du fichier ///" << endl;		
 		while (getline( fichier, ligne, '\n'))
 		{
+			numLigne++;
 			while (!ligne.empty())
 			{
 			id = FindNextId(ligne);
@@ -43,6 +45,7 @@ string Flot::ChercherId(string nomFic)
 				{
 					listeId += id;
 					listeId += SEPARATOR;
+					desRefCroisees.AddReference(id,numLigne);
 				}
 			}			
 		} 
