@@ -11,6 +11,7 @@ copyright            : (C) 2011 par Tristan Pourcelot & Jordan Vincent
 //-------------------------------------------------------- Include système
 #include <iostream>
 #include <string>
+#include <cstring>
 
 using namespace std;
 //------------------------------------------------------ Include personnel
@@ -31,31 +32,41 @@ int main ( int argc,const char* argv[] )
 {
 	//Index de l'argument traité
 	int indexArg = 1;
-	switch ( argc )
-	{	
-		case 1 :
-			Usage( "liste d'arguments vide" );
-			return 1;
-			break;
-		case 2 : //Sans option ou alors pas de fichiers
-
-			break;
-
-		default :// Options & fichiers
-			return 0;
-			break;
-	}
-
-	string	adresseFichiers("src/fichiers/");
-	string	listeId;
-	int		a;
-
-	Flot		monFlot;
+	int i;
+	
+	string myKeywordFile;
+	Flot monFlot;
 	RefCroisees mesRefCroisees;
+	string maListeID;
+
+
+
+	//Traitement du cas où la liste d'arguments est vide
+	if ( argc == 1 )
+	{
+		Usage ( "Liste d'arguments vide" ) ;
+		return 42;
+	}
+	
+	
+	if ( !strcmp(argv[1],"-k") && strcmp(argv[2],"-e") && argc > 3 )
+	{
+		myKeywordFile = argv[2]; //OK, on a un fichier de mot cles
+		maListeID = monFlot.ChercherId(myKeywordFile, mesRefCroisees);
+	}
+	else
+		{ if ( argc==2 || strcmp(argv[2],"-e") )
+		  {
+		      Usage( " Indiquez un fichier de mots cles ");
+			  return 42;
+		  }
+		}
+
+	/*string	adresseFichiers("src/fichiers/");
 
 	listeId = monFlot.ChercherId(adresseFichiers+="source.txt", mesRefCroisees);
-
-	cin >> a;
+	*/
+	return 0;
 
 
 } //----- fin de Main 
