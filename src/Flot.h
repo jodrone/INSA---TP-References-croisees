@@ -39,8 +39,9 @@ public:
 	//
 
 	string FindNextId(string &phrase);
-	// Mode d'emploi : renvoie le premier mot de phrase et supprime ce mot 
-	// de phrase. supprime les commentaires et les chaines de caractères
+	// Mode d'emploi : renvoie le premier mot de la phrase et le supprime 
+	// de la phrase.
+	// Il supprime également les commentaires et les chaines de caractères
 	//
 	// Contrat :
 	//
