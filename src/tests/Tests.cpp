@@ -41,7 +41,8 @@ int main ( )
 {
 // Algorithme :
 //
-	string	adresseFichiers("fichiers/");
+	//string	adresseFichiers("fichiers/"); // Tristan
+	string	adresseFichiers("C:/Users/Jo/Documents/INSA/3IF/TP/TP-references-croisees/INSA---TP-References-croisees/src/fichiers/"); // Jordan
 	string	listeId;
 	int		a;
 
