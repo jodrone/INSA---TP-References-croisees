@@ -29,8 +29,10 @@ int main ( int argc,const char* argv[] )
 // Algorithme : Traitement trivial des arguments
 // En cas d'erreur, on renvoie un message d'erreur + Usage()
 {
-  switch ( argc )
-	{
+	//Index de l'argument traité
+	int indexArg = 1;
+	switch ( argc )
+	{	
 		case 1 :
 			Usage( "liste d'arguments vide" );
 			return 1;
@@ -42,7 +44,6 @@ int main ( int argc,const char* argv[] )
 		default :// Options & fichiers
 			return 0;
 			break;
-	
 	}
 
 
