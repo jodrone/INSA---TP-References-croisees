@@ -30,17 +30,26 @@ void RefCroisees::AddReference(string id, int numLigne)
 RefCroisees::RefCroisees ( )
 // Algorithme : Trivial
 {
+#if defined ( MAP ) 
+	cout << "Appel du constructeur de RefCroisees" << endl;
+#endif	
+} // ----- Fin de RefCroisees
 
-}
+RefCroisees::RefCroisees ( const RefCroisees & uneRefCroisees )
+// Algorithme : Trivial
+{
+#if defined ( MAP ) 
+	cout << "Appel du constructeur de copie de RefCroisees" << endl;
+#endif	
+} // ----- Fin de RefCroisees (constructeur de copie )
 
 RefCroisees::~RefCroisees ( )
 // Algorithme : Trivial
 {
-	#if defined ( MAP ) 
-		cout << "Appel du destructeur de RefCroisees" << endl;
-	#endif
-	
-}
+#if defined ( MAP ) 
+	cout << "Appel du destructeur de RefCroisees" << endl;
+#endif	
+} // ----- Fin de ~RefCroisees
 
 
 //------------------------------------------------------------------ PRIVE

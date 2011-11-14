@@ -50,7 +50,7 @@ public:
 	bool IdValide( string nomId );
 	// Mode d'emploi : renvoie vrai si nomId est un identificateur valide
 	//
-	// Contrat :
+	// Contrat : nomId est composé de caractères alphanumériques et de '_'
 	//
 
   	// Fonction();

@@ -21,11 +21,15 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-void Identificateur::AjouterOccurrence( string nomFic , int numLigne)
+bool Identificateur::AjouterOccurrence( string nomFic , int numLigne)
 // Algorithme :
 {
-	occId->AjouterOccurrence(nomFic,numLigne);
-}
+	if (occId == NULL)
+	{
+		Occurrences *occId = new Occurrences;
+	}
+	return occId->AjouterOccurrence(nomFic,numLigne);
+} // ----- Fin de AjouterOccurrence
 
 //-------------------------------------------- Constructeurs - destructeur
 
@@ -46,9 +50,7 @@ Identificateur::Identificateur ( const Identificateur & unIdentificateur )
 	cout << "Appel du constructeur de copie de Identificateur" << endl;
 #endif
 	nomId = unIdentificateur.nomId;
-	Occurrences *occId = new Occurrences;
-	*occId = 
-
+	Occurrences *occId = new Occurrences( *unIdentificateur.occId );
 } // ----- Fin de Identificateur (constructeur de copie)
 
 Identificateur::~Identificateur ( )

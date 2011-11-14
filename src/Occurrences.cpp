@@ -40,8 +40,8 @@ bool Occurrences::AjouterOccurrence ( string nomFic, int numLigne )
 	}
 	// si trouvé
 	else
-	{
-		return *it->AddLigne( numLigne );
+	{		
+		return it->AddLigne( numLigne );
 	}
 
 } // ----- Fin de AddOccurrence

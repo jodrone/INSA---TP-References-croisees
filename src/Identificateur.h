@@ -30,8 +30,9 @@ class Identificateur
 
 public:
 //----------------------------------------------------- Méthodes publiques
-	void AjouterOccurrence( string nomFic , int numLigne);
-	// Mode d'emploi : Ajoute une occurence à l'identificateur
+	bool AjouterOccurrence( string nomFic , int numLigne);
+	// Mode d'emploi : Ajoute une occurence à l'identificateur.
+	// Retourne faux si occurrence déjà existante, vrai sinon.
 	//
 	// Contrat : numLigne > 0
 	//
