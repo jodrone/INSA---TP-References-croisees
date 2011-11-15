@@ -22,6 +22,77 @@ using namespace std;
 
 //----------------------------------------------------- Methodes publiques
 
+void Flot::RemplirMotsCles(string nomFicMC, RefCroisees &uneRefMotsCles)
+// Algotithme : parcours de nomFicMC et remplissage de RefMotsCles
+{
+	string id,ligne;
+	
+	ifstream fichier(nomFicMC.c_str(), ios::in);
+
+	if (fichier)
+	{
+		cout << "/// Ouverture du fichier ///" << endl;		
+		while (getline( fichier, ligne, '\n'))
+		{
+			while (!ligne.empty())
+			{
+			id = FindNextId(ligne);
+			if (IdValide(id))  
+				{
+					uneRefMotsCles.AddReference(id);
+				}
+			}			
+		} 
+	
+		fichier.close(); 
+		cout << "/// Fermeture du fichier ///" << endl;
+	}
+	else cerr << "/// Impossible d'ouvrir le fichier ///" << endl;
+} // ----- Fin de RemplirMotsCles
+
+void Flot::CreerRefCrois(string nomFic, RefCroisees &uneRefMotsCles, 
+							RefCroisees &desRefCroisees, bool exclure)
+// Algorithme : parcours de nomFic et comparaison des identificateurs avec 
+// ceux de RefMotsCles.
+{
+	string id,ligne;
+	int numLigne = 0;	
+
+	ifstream fichier(nomFic.c_str(), ios::in);
+
+	if (fichier)
+	{
+		cout << "/// Ouverture du fichier ///" << endl;	
+
+		while (getline( fichier, ligne, '\n'))
+		{
+			numLigne++;
+			while (!ligne.empty())
+			{
+			id = FindNextId(ligne);
+			if (IdValide(id))  
+				{	
+					// Les identificateurs sont ceux de desRefCroisees
+					if (! exclure && uneRefMotsCles.FindReference(id))
+					{
+						desRefCroisees.AddReference(id,numLigne,nomFic.c_str());					
+					}
+					// Les identificateurs sont tous sauf ceux de desRefCroisees
+					else if (exclure && ! uneRefMotsCles.FindReference(id))
+					{						
+						desRefCroisees.AddReference(id,numLigne,nomFic.c_str());
+					}
+				}
+			}			
+		} 
+
+		fichier.close(); 
+		cout << "/// Fermeture du fichier ///" << endl;
+	}
+	else cerr << "/// Impossible d'ouvrir le fichier ///" << endl;
+
+} // ----- Fin de CreerRefCrois
+
 string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
 // Algorithme : parcours du fichier, ligne par ligne
 {

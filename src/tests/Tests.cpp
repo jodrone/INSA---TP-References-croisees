@@ -37,7 +37,7 @@ using namespace std;
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
 
-int main ( ) 
+int main2 ( ) 
 {
 // Algorithme :
 //
@@ -52,5 +52,6 @@ int main ( )
 	listeId = monFlot.ChercherId(adresseFichiers+="source.txt", mesRefCroisees);
 
 	cin >> a;
+	return a;
 
 } //----- fin de Main

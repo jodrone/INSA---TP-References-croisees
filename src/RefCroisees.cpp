@@ -21,17 +21,29 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Methodes publiques
+bool RefCroisees::FindReference(const string id)
+// Algorithme : On parcourt l'arbre pour trouver si l'identifiant existe.
+{
+	return true;
+} // ----- Fin de FindReference
+
+void RefCroisees::AddReference(string id)
+// Algorithme : On parcourt l'arbre pour trouver si l'identifiant existe,
+// au cas où, il est créé
+{
+} // ----- Fin de AddReference
+
 void RefCroisees::AddReference(string id, int numLigne)
 // Algorithme : On parcourt l'arbre pour trouver si l'identifiant existe,
 // au cas où, il est créé et l'occurence est ajoutée
 {
-}
+} // ----- Fin de AddReference
 
 void RefCroisees::AddReference(string id, int numLigne, string nomFic)
 // Algo : idem que précédemment TODO : MAJ
 {
 
-}
+} // ----- Fin de AddReference
 
 //-------------------------------------------- Constructeurs - destructeur
 RefCroisees::RefCroisees ( )

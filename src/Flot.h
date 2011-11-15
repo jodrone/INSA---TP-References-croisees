@@ -31,10 +31,26 @@ class Flot
 public:
 //----------------------------------------------------- Methodes publiques
 	
+	void RemplirMotsCles(string nomFicMC, RefCroisees &uneRefMotsCles); 
+	// Mode d'emploi : rempli les références de mots clés avec le fichier.
+	//
+
+	void CreerRefCrois(string nomFic, RefCroisees &uneRefMotsCles, 
+							RefCroisees &desRefCroisees, bool exclure = 0);
+	// Mode d'emploi : lit le fichier dont le chemin est passe en parametre
+	// et renseigne desRefCroisees avec les occurrences des identificateurs
+	// rencontrés.
+	// Lorsque exclure vaut 0, les identificateurs entrés dans desRefCroisees
+	// seront ceux de RefMotsCles, sinon, les identificateurs seront tous les
+	// identificateurs exceptés ceux de RefMotsCles.
+	//
+	// contrat :
+	//
+
 	string ChercherId(string nomFic, RefCroisees &desRefCroisees);
 	// Mode d'emploi : lit le fichier dont le chemin est passe en parametre
 	// et renvoie une string contenant les identificateurs valides separes
-	// par le caractere '\n'
+	// par le caractere '\n', entre les occurrences dans desRefCroisees.
 	//
 	// contrat :
 	//

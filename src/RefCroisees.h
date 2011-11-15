@@ -31,6 +31,15 @@ class RefCroisees
 public:
 //----------------------------------------------------- Methodes publiques
 	
+	bool FindReference(const string id);
+	// Mode d'emploi : cherche l'identificaeur id dans l'arbre.
+	// Renvoie false s'il n'existe pas, true sinon.
+
+	void AddReference(string id);
+	// Mode d'emploi : Ajoute un identificateur à l'arbre. S'il est inconnu
+	// il est créé.
+	//
+
 	void AddReference(string id, int numLigne);
 	// Mode d'emploi : Ajoute une reference a l'arbre. Si l'identificateur est
 	// inconnu, il est cree. L'occurence est ajoutee.
@@ -42,6 +51,9 @@ public:
 	// Mode d'emploi : ajoute une référence à l'arbre.
 	// Si l'ID est inconnu, il est créé.
 	// L'occurence est ensuite ajoutée
+	//
+	// Contrat : numLigne > 0
+	//
 
 //-------------------------------------------- Constructeurs - destructeur
 	RefCroisees ( const RefCroisees & uneRefCroisees );

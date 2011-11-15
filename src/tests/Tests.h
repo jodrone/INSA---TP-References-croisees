@@ -32,7 +32,7 @@
 // Contrat :
 //
 
-int main ( );
+int main2 ( );
 // Mode d'emploi :
 // Réalise les différents tests
 
