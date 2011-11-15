@@ -1,7 +1,7 @@
 /*************************************************************************
                            RefCroisees  -  description
                              -------------------
-    début                : ...
+    debut                : Nov. 2011
     copyright            : (C) 2011 par Tristan Pourcelot & Jordan Vincent 
 *************************************************************************/
 
@@ -9,7 +9,7 @@
 #if ! defined ( REFCROISEES_H )
 #define REFCROISEES_H
 
-//--------------------------------------------------- Interfaces utilisées
+//--------------------------------------------------- Interfaces utilisees
 #include <set>
 #include "Identificateur.h"
 //------------------------------------------------------------- Constantes 
@@ -17,9 +17,9 @@
 //------------------------------------------------------------------ Types 
 
 //------------------------------------------------------------------------ 
-// Rôle de la classe <RefCroisees>
+// Role de la classe <RefCroisees>
 // 
-// La classe RefCroisees a pour rôle de gérer l'ensembles des références
+// La classe RefCroisees a pour role de gÃ©rer l'ensembles des rÃ©fÃ©rences
 // croisees.
 //
 //------------------------------------------------------------------------ 
@@ -29,20 +29,19 @@ class RefCroisees
 //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- Methodes publiques
 	
 	void AddReference(string id, int numLigne);
-	// Mode d'emploi : Ajoute une référence à l'arbre. Si l'identificateur est
-	// inconnu, il est créé. L'occurence est ajoutée.
+	// Mode d'emploi : Ajoute une reference a l'arbre. Si l'identificateur est
+	// inconnu, il est cree. L'occurence est ajoutee.
 	//
 	// Contrat : numLigne > 0
 	//
 
-  	// Fonction();
-	// Mode d'emploi :
-	//
-	// Contrat : 
-	//
+	void AddReference(string id, int numLigne, string nomFic );
+	// Mode d'emploi : ajoute une rÃ©fÃ©rence Ã  l'arbre.
+	// Si l'ID est inconnu, il est crÃ©Ã©.
+	// L'occurence est ensuite ajoutÃ©e
 
 //-------------------------------------------- Constructeurs - destructeur
 	RefCroisees ( const RefCroisees & uneRefCroisees );
@@ -65,13 +64,19 @@ public:
 	//
 //------------------------------------------------------------------ PRIVE 
 protected:
-//----------------------------------------------------- Méthodes protégées	
+//----------------------------------------------------- Methodes protegees
 
-//----------------------------------------------------- Attributs protégés
+//----------------------------------------------------- Attributs proteges
 
 	set<Identificateur> arbreId;
 };
 
-//----------------------- Autres définitions dépendantes de <RefCroisees>
+//----------------------- Autres definitions dependantes de <RefCroisees>
 
 #endif // REFCROISEES_H
+
+// Fonction();
+// Mode d'emploi :
+//
+// Contrat :
+//

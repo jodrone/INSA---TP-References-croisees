@@ -1,15 +1,15 @@
 /*************************************************************************
                            Fichier  -  description
                              -------------------
-    début                : ...
+    debut                : Nov. 2011
     copyright            : (C) 2011 par Tristan Pourcelot & Jordan Vincent 
 *************************************************************************/
 
-//-- Réalisation de la classe <Fichier> (fichier Fichier.cpp) ----
+//-- Realisation de la classe <Fichier> (fichier Fichier.cpp) ----
 
 //---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include système
+//-------------------------------------------------------- Include systeme
 using namespace std;
 
 //------------------------------------------------------ Include personnel
@@ -19,7 +19,7 @@ using namespace std;
 
 //----------------------------------------------------------------- PUBLIC
 
-//----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- Methodes publiques
 bool Fichier::AddLigne( int numLigne )
 // Algorithme :
 {
@@ -43,7 +43,7 @@ bool Fichier::AddLigne( int numLigne )
 } // ----- Fin de AddLigne
 
 bool Fichier::operator==(Fichier const & unFichier)
-// Algotithme : Trivial
+// Algorithme : Trivial
 {
 	if (nomFic == unFichier.nomFic) return true;
 	else return false;
@@ -62,7 +62,7 @@ Fichier::Fichier ( string unNom )
 } // ----- Fin de Fichier
 
 Fichier::Fichier ( const Fichier & unFichier )
-// Algorithme : Création d'un nouveau vector et recopie des élements
+// Algorithme : Creation d'un nouveau vector et recopie des elements
 {
 #if defined ( MAP ) 
 	cout << "Appel du constructeur de copie de Fichier" << endl;
@@ -84,4 +84,4 @@ Fichier::~Fichier ( )
 
 //------------------------------------------------------------------ PRIVE
 
-//----------------------------------------------------- Méthodes protégées
+//----------------------------------------------------- Mï¿½thodes protï¿½gï¿½es

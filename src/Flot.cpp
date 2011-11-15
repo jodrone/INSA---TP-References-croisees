@@ -27,7 +27,7 @@ string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
 {
 	string id,ligne,listeId;
 	const char SEPARATOR('\n');
-	int numLigne(0);
+	int numLigne = 0;
 	
 
 	ifstream fichier(nomFic.c_str(), ios::in);
@@ -45,7 +45,7 @@ string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
 				{
 					listeId += id;
 					listeId += SEPARATOR;
-					desRefCroisees.AddReference(id,numLigne);
+					desRefCroisees.AddReference(id,numLigne,nomFic.c_str());
 				}
 			}			
 		} 
@@ -63,7 +63,7 @@ string Flot::FindNextId(string &phrase)
 // Algorithme : parcours de phrase jusqu'a trouver un caractere special
 {
 	string	mot;
-	int		i(0),j(0);
+	int		i = 0 ;
 	char	lettre = phrase[i];
 	
 	while ( (i < phrase.length()-1) && ( isalnum(lettre) || lettre == '_'))
@@ -78,6 +78,7 @@ string Flot::FindNextId(string &phrase)
 	mot = phrase.substr(0,i);
 
 	// Cas des commentaires
+	// TODO : prendre en compte les /* */
 	if (lettre == '/' && phrase[i+1] == '/') phrase.erase(0,phrase.length());
 	// Cas des chaines de caracteres
 	else if (lettre == '"' && i < phrase.length()-1)

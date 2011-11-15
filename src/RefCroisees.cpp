@@ -22,8 +22,15 @@ using namespace std;
 
 //----------------------------------------------------- Methodes publiques
 void RefCroisees::AddReference(string id, int numLigne)
-// Algorithme :
+// Algorithme : On parcourt l'arbre pour trouver si l'identifiant existe,
+// au cas où, il est créé et l'occurence est ajoutée
 {
+}
+
+void RefCroisees::AddReference(string id, int numLigne, string nomFic)
+// Algo : idem que précédemment TODO : MAJ
+{
+
 }
 
 //-------------------------------------------- Constructeurs - destructeur
