@@ -57,7 +57,7 @@ public:
 	// Contrat :
 	//
 
-    ~Occurrences ( );
+    virtual ~Occurrences ( );
 	// Mode d'emploi (destructeur) :
 	//
 	// Contrat :

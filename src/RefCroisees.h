@@ -69,7 +69,7 @@ public:
 	// Contrat :
 	//
 
-    ~RefCroisees ( );
+    virtual ~RefCroisees ( );
 	// Mode d'emploi (destructeur) :
 	//
 	// Contrat :

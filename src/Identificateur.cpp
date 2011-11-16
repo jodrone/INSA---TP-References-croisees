@@ -31,6 +31,13 @@ bool Identificateur::AjouterOccurrence( string nomFic , int numLigne)
 	return occId->AjouterOccurrence(nomFic,numLigne);
 } // ----- Fin de AjouterOccurrence
 
+bool Identificateur::operator==(Identificateur const & unIdent) const
+// Algorithme : Trivial
+{
+	if (nomId == unIdent.nomId) return true;
+	else return false;
+} // ----- Fin de operator==
+
 //-------------------------------------------- Constructeurs - destructeur
 
 Identificateur::Identificateur (string monNom )

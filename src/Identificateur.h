@@ -37,6 +37,12 @@ public:
 	// Contrat : numLigne > 0
 	//
 
+	bool operator==(Identificateur const & unIdent) const;
+	// Mode d'emploi : renvoie vrai si unIdent est égal à this
+	//
+	// Contrat : le test ne ce fait que sur l'attribut nomId !
+	//
+
   	// Fonction();
 	// Mode d'emploi :
 	//

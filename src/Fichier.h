@@ -30,8 +30,8 @@ class Fichier
 
 public:
 //----------------------------------------------------- Méthodes publiques
-	bool operator==(Fichier const & unFichier);
-	// Mode d'emploi : renvoie vrai si fichier1 est égal à fichier2
+	bool operator==(Fichier const & unFichier) const;
+	// Mode d'emploi : renvoie vrai unFichier est égal à this
 	//
 	// Contrat : le test ne ce fait que sur l'attribut nomFic !
 	//
@@ -67,7 +67,7 @@ public:
 	// Contrat :
 	//
 
-    ~Fichier ( );
+    virtual ~Fichier ( );
 	// Mode d'emploi (destructeur) :
 	//
 	// Contrat :

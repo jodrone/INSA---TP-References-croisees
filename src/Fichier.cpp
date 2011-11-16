@@ -42,7 +42,7 @@ bool Fichier::AddLigne( int numLigne )
 	}
 } // ----- Fin de AddLigne
 
-bool Fichier::operator==(Fichier const & unFichier)
+bool Fichier::operator==(Fichier const & unFichier) const
 // Algorithme : Trivial
 {
 	if (nomFic == unFichier.nomFic) return true;

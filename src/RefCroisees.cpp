@@ -11,6 +11,7 @@
 
 //-------------------------------------------------------- Include systeme
 using namespace std;
+#include <algorithm>
 
 //------------------------------------------------------ Include personnel
 #include "RefCroisees.h"
@@ -24,6 +25,23 @@ using namespace std;
 bool RefCroisees::FindReference(const string id)
 // Algorithme : On parcourt l'arbre pour trouver si l'identifiant existe.
 {
+	set<Identificateur>::iterator it;
+	Identificateur IdRecherche(id);
+
+	it = find (arbreId.begin(), arbreId.end(), IdRecherche);
+
+	// Si rien trouve
+	if ( it == arbreId.end() )
+	{
+		return false;
+	}
+	// si trouve
+	else
+	{		
+		return true;
+	}
+
+
 	return true;
 } // ----- Fin de FindReference
 
