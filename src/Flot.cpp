@@ -13,6 +13,7 @@
 using namespace std;
 #include <iostream>
 #include <fstream>
+#include <locale>
 //------------------------------------------------------ Include personnel
 #include "Flot.h"
 
@@ -26,7 +27,8 @@ void Flot::RemplirMotsCles(string nomFicMC, RefCroisees &uneRefMotsCles)
 // Algotithme : parcours de nomFicMC et remplissage de RefMotsCles
 {
 	string id,ligne;
-	
+	bool comIdPrec = false, comIdActu = false;
+
 	ifstream fichier(nomFicMC.c_str(), ios::in);
 
 	if (fichier)
@@ -36,11 +38,12 @@ void Flot::RemplirMotsCles(string nomFicMC, RefCroisees &uneRefMotsCles)
 		{
 			while (!ligne.empty())
 			{
-			id = FindNextId(ligne);
-			if (IdValide(id))  
+			id = FindNextId(ligne, comIdActu);
+			if (IdValide(id) && ! comIdPrec )
 				{
 					uneRefMotsCles.AddReference(id);
 				}
+			comIdPrec = comIdActu;
 			}			
 		} 
 	
@@ -57,6 +60,7 @@ void Flot::CreerRefCrois(string nomFic, RefCroisees &uneRefMotsCles,
 {
 	string id,ligne;
 	int numLigne = 0;	
+	bool comIdPrec = false, comIdActu = false;
 
 	ifstream fichier(nomFic.c_str(), ios::in);
 
@@ -69,8 +73,8 @@ void Flot::CreerRefCrois(string nomFic, RefCroisees &uneRefMotsCles,
 			numLigne++;
 			while (!ligne.empty())
 			{
-			id = FindNextId(ligne);
-			if (IdValide(id))  
+			id = FindNextId(ligne, comIdActu);
+			if (IdValide(id) && ! comIdPrec )
 				{	
 					// Les identificateurs sont ceux de desRefCroisees
 					if (! exclure && uneRefMotsCles.FindReference(id))
@@ -83,6 +87,7 @@ void Flot::CreerRefCrois(string nomFic, RefCroisees &uneRefMotsCles,
 						desRefCroisees.AddReference(id,numLigne,nomFic.c_str());
 					}
 				}
+			comIdPrec = comIdActu;
 			}			
 		} 
 
@@ -99,7 +104,7 @@ string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
 	string id,ligne,listeId;
 	const char SEPARATOR('\n');
 	int numLigne = 0;
-	
+	bool comIdPrec = false, comIdActu = false;
 
 	ifstream fichier(nomFic.c_str(), ios::in);
 
@@ -111,13 +116,14 @@ string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
 			numLigne++;
 			while (!ligne.empty())
 			{
-			id = FindNextId(ligne);
-			if (IdValide(id))  
+			id = FindNextId(ligne, comIdActu);
+			if (IdValide(id) && ! comIdPrec )  
 				{
 					listeId += id;
 					listeId += SEPARATOR;
 					desRefCroisees.AddReference(id,numLigne,nomFic.c_str());
 				}
+			comIdPrec = comIdActu;
 			}			
 		} 
 		cout << listeId << endl;
@@ -130,27 +136,65 @@ string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
 	return "";
 } //----- Fin de ChercherId
 
-string Flot::FindNextId(string &phrase)
+string Flot::FindNextId(string &phrase, bool & comActif)
 // Algorithme : parcours de phrase jusqu'a trouver un caractere special
 {
 	string	mot;
-	int		i = 0 ;
+	int		i = 0;
 	char	lettre = phrase[i];
+	bool	comment = comActif;
 	
-	while ( (i < phrase.length()-1) && ( isalnum(lettre) || lettre == '_'))
+	while ( (i < phrase.length()-1) && ( std::isalnum(lettre,std::locale()) || lettre == '_'))
 	{		
 		i++;
 		lettre = phrase[i];
 	}
 
 	// Fin de phrase ne se terminant pas par un separateur
-	if ( isalnum(lettre) || lettre == '_') i++;
+	if ( std::isalnum(lettre,std::locale()) || lettre == '_') i++;
 
 	mot = phrase.substr(0,i);
 
+	
+	// Cas fin de commentaire '*/'
+	if (lettre == '*' && comment == true)
+	{
+		if (phrase.length() >= i+2)
+		{
+			if ( phrase[i+1] == '/') 
+			{
+				phrase.erase(0,i+2);
+				comment = false;
+			}
+			else phrase.erase(0,i+1);
+		}
+		else phrase.erase();
+	}
+
+	// Cas commentaire '/*' et '*/' non trouvee
+	else if (comment == true)
+	{
+		phrase.erase(0,i+1);
+	}
+
 	// Cas des commentaires
-	// TODO : prendre en compte les /* */
-	if (lettre == '/' && phrase[i+1] == '/') phrase.erase(0,phrase.length());
+	else if (lettre == '/' )
+	{
+		if (phrase.length() >= i+2)
+		{
+			// Cas des commentaires '//'
+			if ( phrase[i+1] == '/') phrase.erase();
+			// Cas des commentaires '/* */'
+			else if ( phrase[i+1] == '*') 
+			{
+				phrase.erase(0,i+2);
+				comment = true;
+			}
+			else phrase.erase(0,i+1);
+		}
+		else phrase.erase();
+	}
+
 	// Cas des chaines de caracteres
 	else if (lettre == '"' && i < phrase.length()-1)
 	{
@@ -163,12 +207,14 @@ string Flot::FindNextId(string &phrase)
 		}
 		phrase.erase(0,i+1);
 	}
+	// Debut de phrase commencant par un separateur
+	else if (i == 0) phrase.erase(0,1);
+
 	// cas general
 	else phrase.erase(0,i);
 
-	// Debut de phrase commencant par un separateur
-	if (i == 0) phrase.erase(0,1);
 
+	comActif = comment;
 	return mot;
 } //----- Fin de IdValide
 
@@ -176,7 +222,7 @@ bool Flot::IdValide( string nomId )
 // Algorithme : Trivial
 {
 	if (nomId.empty())			return 0;
-	else if (isdigit(nomId[0]))	return 0;
+	else if (std::isdigit(nomId[0],std::locale()))	return 0;
 	else						return 1;
 } //----- Fin de IdValide
 

@@ -32,7 +32,8 @@ public:
 //----------------------------------------------------- Methodes publiques
 	
 	void RemplirMotsCles(string nomFicMC, RefCroisees &uneRefMotsCles); 
-	// Mode d'emploi : rempli les références de mots clés avec le fichier.
+	// Mode d'emploi : rempli les références de mots clés avec le fichier 
+	// entre en parametre.
 	//
 
 	void CreerRefCrois(string nomFic, RefCroisees &uneRefMotsCles, 
@@ -47,18 +48,23 @@ public:
 	// contrat :
 	//
 
+	// Fonction obsolete
 	string ChercherId(string nomFic, RefCroisees &desRefCroisees);
 	// Mode d'emploi : lit le fichier dont le chemin est passe en parametre
 	// et renvoie une string contenant les identificateurs valides separes
 	// par le caractere '\n', entre les occurrences dans desRefCroisees.
+	// Entre les identificateurs trouvés dans &desRefCroisees
 	//
 	// contrat :
 	//
 
-	string FindNextId(string &phrase);
+	string FindNextId(string &phrase,bool & comActif);
 	// Mode d'emploi : renvoie le premier mot de la phrase et le supprime 
 	// de la phrase.
 	// Il supprime egalement les commentaires et les chaines de caracteres
+	// Si un commentaire du type "/* */" est rencontre comActif passe a vrai
+	// Si comActif est deja a vrai et que la fin de commentaire est rencontree
+	// comActif devient faux
 	//
 	// Contrat :
 	//
