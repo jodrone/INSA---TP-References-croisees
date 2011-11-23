@@ -43,6 +43,13 @@ public:
 	// Contrat : le test ne ce fait que sur l'attribut nomId !
 	//
 
+	bool operator<(Identificateur const & unIdent) const;
+	// Mode d'emploi : renvoie vrai si unIdent est strictement superieur a
+	// this.
+	//
+	// Contrat : le test ne ce fait que sur l'attribut nomId !
+	//
+
   	// Fonction();
 	// Mode d'emploi :
 	//
@@ -69,14 +76,14 @@ public:
 	//
 	// Contrat :
 	//
-
+	string nomId;
 //------------------------------------------------------------------ PRIVE 
 protected:
 //----------------------------------------------------- Methodes protegees
 
-//----------------------------------------------------- Attributs prot�g�s
+//----------------------------------------------------- Attributs proteges
 
-	string nomId;
+	
 	Occurrences *occId;
 };
 
