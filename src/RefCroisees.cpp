@@ -49,17 +49,28 @@ void RefCroisees::AddReference(string id)
 // Algorithme : On parcourt l'arbre pour trouver si l'identifiant existe,
 // au cas où, il est créé
 {
-} // ----- Fin de AddReference
-
-void RefCroisees::AddReference(string id, int numLigne)
-// Algorithme : On parcourt l'arbre pour trouver si l'identifiant existe,
-// au cas où, il est créé et l'occurence est ajoutée
-{
+	arbreId.insert(id);
 } // ----- Fin de AddReference
 
 void RefCroisees::AddReference(string id, int numLigne, string nomFic)
 // Algo : idem que précédemment TODO : MAJ
 {
+	set<Identificateur>::iterator it;
+	pair<set<Identificateur>::iterator,bool>	ansInsert;
+
+	ansInsert = arbreId.insert(id);
+	it = ansInsert.first;
+
+	// Nouvel identificateur cree
+	if (ansInsert.second == true )
+	{
+		it->AjouterOccurrence(nomFic,numLigne);
+	}
+	// Identificateur deja existant
+	else
+	{
+		it->AjouterOccurrence(nomFic,numLigne);
+	}
 
 } // ----- Fin de AddReference
 

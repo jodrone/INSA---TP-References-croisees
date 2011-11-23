@@ -26,7 +26,7 @@ using namespace std;
 
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
-int main ( int argc,const char* argv[] )
+int main2 ( int argc,const char* argv[] )
 // Algorithme : Traitement trivial des arguments
 // En cas d'erreur, on renvoie un message d'erreur + Usage()
 {

@@ -30,9 +30,16 @@ bool Occurrences::AjouterOccurrence ( string nomFic, int numLigne )
 	vector<Fichier>::iterator it;
 	Fichier fichierRecherche(nomFic);
 
-	it = find (vecOcc.begin(), vecOcc.end(), fichierRecherche);
+	if (vecOcc.size() == 0)
+	{
+		
+	}
+	else 
+	{
+		it = find (vecOcc.begin(), vecOcc.end(), fichierRecherche);
+	}
 
-	// Si rien trouve
+	/*// Si rien trouve
 	if ( it == vecOcc.end() )
 	{
 		Fichier fichier( nomFic );
@@ -44,7 +51,7 @@ bool Occurrences::AjouterOccurrence ( string nomFic, int numLigne )
 	else
 	{		
 		return it->AddLigne( numLigne );
-	}
+	}*/return 1;
 
 } // ----- Fin de AddOccurrence
 
@@ -56,6 +63,7 @@ Occurrences::Occurrences ( )
 #if defined ( MAP ) 
 	cout << "Appel du constructeur de Occurrences" << endl;
 #endif
+	
 } // ----- Fin de Occurrences
 
 Occurrences::Occurrences ( const Occurrences & uneOccurrences )

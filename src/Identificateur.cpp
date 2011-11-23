@@ -20,13 +20,13 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Methodes publiques
-
-bool Identificateur::AjouterOccurrence( string nomFic , int numLigne)
+bool Identificateur::AjouterOccurrence( string nomFic , int numLigne) 
 // Algorithme :
 {
 	if (occId == NULL)
 	{
-		Occurrences *occId = new Occurrences;
+		
+		occId = new Occurrences;
 	}
 	return occId->AjouterOccurrence(nomFic,numLigne);
 } // ----- Fin de AjouterOccurrence
@@ -64,7 +64,7 @@ Identificateur::Identificateur ( const Identificateur & unIdentificateur )
 	cout << "Appel du constructeur de copie de Identificateur" << endl;
 #endif
 	nomId = unIdentificateur.nomId;
-	Occurrences *occId = new Occurrences( *unIdentificateur.occId );
+	occId = new Occurrences( *unIdentificateur.occId );
 } // ----- Fin de Identificateur (constructeur de copie)
 
 Identificateur::~Identificateur ( )

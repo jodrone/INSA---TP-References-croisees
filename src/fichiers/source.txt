@@ -1,13 +1,14 @@
-#include <iostream>
-using namespace std;
+#include<iostream> 
+/* 
+using namespace std; 
 
-int main()
+int main() caca
 {
    double a(0), b(0); //Déclaration des variables utiles
 
    cout << "Bienvenue dans le programme d'addition a+b !" << endl;
 
-   cout << "Donnez une valeur pour a : ";    //Demande du premier nombre
+   cout << "Donnez une valeur pour a : ";    //Demande du premier nombre 
    cin >> a;
 
    cout << "Donnez une valeur pour b : ";    //Demande du deuxième nombre

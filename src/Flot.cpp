@@ -98,7 +98,7 @@ void Flot::CreerRefCrois(string nomFic, RefCroisees &uneRefMotsCles,
 
 } // ----- Fin de CreerRefCrois
 
-string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
+string Flot::ChercherId(string nomFic, RefCroisees desRefCroisees)
 // Algorithme : parcours du fichier, ligne par ligne
 {
 	string id,ligne,listeId;
@@ -214,16 +214,16 @@ string Flot::FindNextId(string &phrase, bool & comActif)
 	else phrase.erase(0,i);
 
 
-	comActif = comment;
-	return mot;
+	comActif =	comment;
+	return		mot;
 } //----- Fin de IdValide
 
 bool Flot::IdValide( string nomId )
 // Algorithme : Trivial
 {
-	if (nomId.empty())			return 0;
+	if (nomId.empty())								return 0;
 	else if (std::isdigit(nomId[0],std::locale()))	return 0;
-	else						return 1;
+	else											return 1;
 } //----- Fin de IdValide
 
 //-------------------------------------------- Constructeurs - destructeur

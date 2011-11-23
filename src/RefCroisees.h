@@ -40,13 +40,6 @@ public:
 	// il est créé.
 	//
 
-	void AddReference(string id, int numLigne);
-	// Mode d'emploi : Ajoute une reference a l'arbre. Si l'identificateur est
-	// inconnu, il est cree. L'occurence est ajoutee.
-	//
-	// Contrat : numLigne > 0
-	//
-
 	void AddReference(string id, int numLigne, string nomFic );
 	// Mode d'emploi : ajoute une référence à l'arbre.
 	// Si l'ID est inconnu, il est créé.

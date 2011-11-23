@@ -37,7 +37,7 @@ using namespace std;
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
 
-int main2 ( ) 
+int main ( ) 
 {
 // Algorithme :
 //
