@@ -98,7 +98,7 @@ void Flot::CreerRefCrois(string nomFic, RefCroisees &uneRefMotsCles,
 
 } // ----- Fin de CreerRefCrois
 
-string Flot::ChercherId(string nomFic, RefCroisees desRefCroisees)
+string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
 // Algorithme : parcours du fichier, ligne par ligne
 {
 	string id,ligne,listeId;

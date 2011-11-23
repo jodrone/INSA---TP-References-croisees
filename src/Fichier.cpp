@@ -25,7 +25,7 @@ bool Fichier::AddLigne( int numLigne )
 {
 	if (nbNumLignes == 0)
 	{
-		vector<int> *numLignes = new vector<int>;
+		numLignes = new vector<int>;
 		numLignes->push_back(numLigne);
 		nbNumLignes++;
 		return 1;
@@ -69,7 +69,7 @@ Fichier::Fichier ( const Fichier & unFichier )
 #endif
 	nomFic =					unFichier.nomFic;
 	nbNumLignes =				unFichier.nbNumLignes;
-	vector<int> *numLignes =	new vector<int>;
+	numLignes =					new vector<int>;
 	*numLignes =				*unFichier.numLignes;
 } // ----- Fin de Fichier (Constructeur de copie)
 

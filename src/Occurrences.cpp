@@ -29,17 +29,10 @@ bool Occurrences::AjouterOccurrence ( string nomFic, int numLigne )
 {
 	vector<Fichier>::iterator it;
 	Fichier fichierRecherche(nomFic);
+	
+	it = find (vecOcc.begin(), vecOcc.end(), fichierRecherche);	
 
-	if (vecOcc.size() == 0)
-	{
-		
-	}
-	else 
-	{
-		it = find (vecOcc.begin(), vecOcc.end(), fichierRecherche);
-	}
-
-	/*// Si rien trouve
+	// Si rien trouve
 	if ( it == vecOcc.end() )
 	{
 		Fichier fichier( nomFic );
@@ -51,7 +44,7 @@ bool Occurrences::AjouterOccurrence ( string nomFic, int numLigne )
 	else
 	{		
 		return it->AddLigne( numLigne );
-	}*/return 1;
+	}
 
 } // ----- Fin de AddOccurrence
 

@@ -55,21 +55,24 @@ void RefCroisees::AddReference(string id)
 void RefCroisees::AddReference(string id, int numLigne, string nomFic)
 // Algo : idem que précédemment TODO : MAJ
 {
-	set<Identificateur>::iterator it;
+	Identificateur ident(id);
+	set<Identificateur>::iterator				it;
 	pair<set<Identificateur>::iterator,bool>	ansInsert;
 
-	ansInsert = arbreId.insert(id);
-	it = ansInsert.first;
+	//ansInsert = arbreId.insert(ident);
+	//it = ansInsert.first;
+	it = arbreId.find(ident);
 
 	// Nouvel identificateur cree
-	if (ansInsert.second == true )
+	if (it == arbreId.end() )
 	{
-		it->AjouterOccurrence(nomFic,numLigne);
+		ident.AjouterOccurrence(nomFic,numLigne);
+		arbreId.insert(ident);
 	}
 	// Identificateur deja existant
 	else
 	{
-		it->AjouterOccurrence(nomFic,numLigne);
+		//it->AjouterOccurrence(nomFic,numLigne);
 	}
 
 } // ----- Fin de AddReference
