@@ -11,11 +11,10 @@
 
 //-------------------------------------------------------- Include systeme
 using namespace std;
-#include <algorithm>
+#include <algorithm> 
 
 //------------------------------------------------------ Include personnel
 #include "RefCroisees.h"
-#include "Identificateur.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -25,55 +24,49 @@ using namespace std;
 bool RefCroisees::FindReference(const string id)
 // Algorithme : On parcourt l'arbre pour trouver si l'identifiant existe.
 {
-	set<Identificateur>::iterator it;
-	Identificateur IdRecherche(id);
+	TypeDicoId::iterator it;
 
-	it = find (arbreId.begin(), arbreId.end(), IdRecherche);
+	it = dicoId.find (id);
 
-	// Si rien trouve
-	if ( it == arbreId.end() )
+	if ( it == dicoId.end() )
 	{
 		return false;
 	}
-	// si trouve
 	else
 	{		
 		return true;
 	}
 
-
 	return true;
 } // ----- Fin de FindReference
 
 void RefCroisees::AddReference(string id)
-// Algorithme : On parcourt l'arbre pour trouver si l'identifiant existe,
-// au cas où, il est créé
+// Algorithme : Trivial
 {
-	arbreId.insert(id);
+	Occurrences*	occ = NULL;
+	TypePairId		myPair(id,occ);
+
+	dicoId.insert(myPair);
 } // ----- Fin de AddReference
 
 void RefCroisees::AddReference(string id, int numLigne, string nomFic)
-// Algo : idem que précédemment TODO : MAJ
+// Algo : insertion de l'identificateur puis de l'occurence.
 {
-	Identificateur ident(id);
-	set<Identificateur>::iterator				it;
-	pair<set<Identificateur>::iterator,bool>	ansInsert;
+	
+	TypeDicoId::iterator			it;
+	pair<TypeDicoId::iterator,bool>	pairInsert;
 
-	//ansInsert = arbreId.insert(ident);
-	//it = ansInsert.first;
-	it = arbreId.find(ident);
+	Occurrences*	occ = NULL;
+	TypePairId		myPair(id,occ);
 
-	// Nouvel identificateur cree
-	if (it == arbreId.end() )
+	pairInsert = dicoId.insert(myPair);
+	
+	// Nouvel identificateur
+	if (pairInsert.second == true )
 	{
-		ident.AjouterOccurrence(nomFic,numLigne);
-		arbreId.insert(ident);
+		pairInsert.first->second = new Occurrences;		
 	}
-	// Identificateur deja existant
-	else
-	{
-		//it->AjouterOccurrence(nomFic,numLigne);
-	}
+	pairInsert.first->second->AjouterOccurrence(nomFic, numLigne);
 
 } // ----- Fin de AddReference
 

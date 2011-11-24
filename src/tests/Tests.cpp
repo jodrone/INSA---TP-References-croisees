@@ -16,6 +16,11 @@ using namespace std;
 #include "../RefCroisees.h"
 #include "../Flot.h"
 
+
+#include <set>
+#include <vector>
+#include <algorithm> 
+
 ///////////////////////////////////////////////////////////////////  PRIVE
 //------------------------------------------------------------- Constantes
 
@@ -39,6 +44,7 @@ using namespace std;
 
 int main ( ) 
 {
+
 // Algorithme :
 //
 	//string	adresseFichiers("fichiers/"); // Tristan

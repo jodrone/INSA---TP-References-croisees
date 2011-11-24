@@ -20,7 +20,7 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Methodes publiques
-bool Identificateur::AjouterOccurrence( string nomFic , int numLigne) 
+bool Identificateur::AjouterOccurrence( string nomFic , int numLigne)
 // Algorithme :
 {
 	if (occId == NULL)

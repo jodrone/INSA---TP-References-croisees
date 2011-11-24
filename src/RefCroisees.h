@@ -10,8 +10,10 @@
 #define REFCROISEES_H
 
 //--------------------------------------------------- Interfaces utilisees
-#include <set>
-#include "Identificateur.h"
+#include <map>
+#include <string>
+#include "Occurrences.h"
+
 //------------------------------------------------------------- Constantes 
 
 //------------------------------------------------------------------ Types 
@@ -30,20 +32,24 @@ class RefCroisees
 
 public:
 //----------------------------------------------------- Methodes publiques
-	
+
+	// Types personalises
+	typedef map <string, Occurrences *> TypeDicoId;
+	typedef pair<string,Occurrences *>	TypePairId;
+
 	bool FindReference(const string id);
-	// Mode d'emploi : cherche l'identificaeur id dans l'arbre.
+	// Mode d'emploi : cherche l'identificaeur id dans le dictionnaire.
 	// Renvoie false s'il n'existe pas, true sinon.
 
 	void AddReference(string id);
-	// Mode d'emploi : Ajoute un identificateur à l'arbre. S'il est inconnu
-	// il est créé.
+	// Mode d'emploi : Ajoute un identificateur au dictionnaire. S'il est 
+	// inconnu, il est créé.
 	//
 
 	void AddReference(string id, int numLigne, string nomFic );
-	// Mode d'emploi : ajoute une référence à l'arbre.
-	// Si l'ID est inconnu, il est créé.
-	// L'occurence est ensuite ajoutée
+	// Mode d'emploi : ajoute une référence au dictionnaire.
+	// Si l'Identificateur est inconnu, il est créé.
+	// L'occurence est ensuite ajoutée.
 	//
 	// Contrat : numLigne > 0
 	//
@@ -73,7 +79,7 @@ protected:
 
 //----------------------------------------------------- Attributs proteges
 
-	set<Identificateur> arbreId;
+	TypeDicoId dicoId;
 };
 
 //----------------------- Autres definitions dependantes de <RefCroisees>
