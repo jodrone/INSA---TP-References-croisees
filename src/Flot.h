@@ -46,14 +46,6 @@ public:
 	// identificateurs exceptés ceux de RefMotsCles.
 	//
 
-	// Fonction obsolete
-	string ChercherId(string nomFic, RefCroisees &desRefCroisees);
-	// Mode d'emploi : lit le fichier dont le chemin est passe en parametre
-	// et renvoie une string contenant les identificateurs valides separes
-	// par le caractere '\n', entre les occurrences dans desRefCroisees.
-	// Entre les identificateurs trouvés dans &desRefCroisees
-	//
-
   	// Fonction();
 	// Mode d'emploi :
 	//

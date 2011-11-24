@@ -92,42 +92,6 @@ void Flot::CreerRefCrois(string nomFic, RefCroisees &uneRefMotsCles,
 
 } // ----- Fin de CreerRefCrois
 
-string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
-// Algorithme : parcours du fichier, ligne par ligne
-{
-	string id,ligne,listeId;
-	const char SEPARATOR('\n');
-	int numLigne = 0;
-	bool comIdPrec = false, comIdActu = false;
-
-	ifstream fichier(nomFic.c_str(), ios::in);
-
-	if (fichier)
-	{
-		while (getline( fichier, ligne, '\n'))
-		{
-			numLigne++;
-			while (!ligne.empty())
-			{
-			id = FindNextId(ligne, comIdActu);
-			if (IdValide(id) && ! comIdPrec )  
-				{
-					listeId += id;
-					listeId += SEPARATOR;
-					desRefCroisees.AddReference(id,numLigne,nomFic.c_str());
-				}
-			comIdPrec = comIdActu;
-			}			
-		} 
-		cout << listeId << endl;
-
-		fichier.close(); 
-		return listeId;
-	}
-	else cerr << "/// Impossible d'ouvrir le fichier " << nomFic << " ///" << endl;
-	return "";
-} //----- Fin de ChercherId
-
 string Flot::FindNextId(string &phrase, bool & comActif)
 // Algorithme : parcours de phrase jusqu'a trouver un caractere special
 {
