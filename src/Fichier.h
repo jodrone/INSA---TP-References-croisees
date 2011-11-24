@@ -85,7 +85,6 @@ protected:
 //----------------------------------------------------- Attributs protégés
 
 	string nomFic;
-	int nbNumLignes;
 	vector <int> *numLignes;
 };
 

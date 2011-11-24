@@ -40,7 +40,7 @@
 //---------------------------------------------------- Fonctions publiques
 
 
-int main2 ( int argc,const char* argv[] );
+int main ( int argc,const char* argv[] );
 // Mode d'emploi :
 // Appel principal
 

@@ -32,8 +32,7 @@ void Flot::RemplirMotsCles(string nomFicMC, RefCroisees &uneRefMotsCles)
 	ifstream fichier(nomFicMC.c_str(), ios::in);
 
 	if (fichier)
-	{
-		cout << "/// Ouverture du fichier ///" << endl;		
+	{	
 		while (getline( fichier, ligne, '\n'))
 		{
 			while (!ligne.empty())
@@ -45,12 +44,10 @@ void Flot::RemplirMotsCles(string nomFicMC, RefCroisees &uneRefMotsCles)
 				}
 			comIdPrec = comIdActu;
 			}			
-		} 
-	
+		} 	
 		fichier.close(); 
-		cout << "/// Fermeture du fichier ///" << endl;
 	}
-	else cerr << "/// Impossible d'ouvrir le fichier ///" << endl;
+	else cerr << "/// Impossible d'ouvrir le fichier " << nomFicMC << " ///" << endl;
 } // ----- Fin de RemplirMotsCles
 
 void Flot::CreerRefCrois(string nomFic, RefCroisees &uneRefMotsCles, 
@@ -66,8 +63,6 @@ void Flot::CreerRefCrois(string nomFic, RefCroisees &uneRefMotsCles,
 
 	if (fichier)
 	{
-		cout << "/// Ouverture du fichier ///" << endl;	
-
 		while (getline( fichier, ligne, '\n'))
 		{
 			numLigne++;
@@ -92,9 +87,8 @@ void Flot::CreerRefCrois(string nomFic, RefCroisees &uneRefMotsCles,
 		} 
 
 		fichier.close(); 
-		cout << "/// Fermeture du fichier ///" << endl;
 	}
-	else cerr << "/// Impossible d'ouvrir le fichier ///" << endl;
+	else cerr << "/// Impossible d'ouvrir le fichier " << nomFic << " ///" << endl;
 
 } // ----- Fin de CreerRefCrois
 
@@ -110,7 +104,6 @@ string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
 
 	if (fichier)
 	{
-		cout << "/// Ouverture du fichier ///" << endl;		
 		while (getline( fichier, ligne, '\n'))
 		{
 			numLigne++;
@@ -129,10 +122,9 @@ string Flot::ChercherId(string nomFic, RefCroisees &desRefCroisees)
 		cout << listeId << endl;
 
 		fichier.close(); 
-		cout << "/// Fermeture du fichier ///" << endl;
 		return listeId;
 	}
-	else cerr << "/// Impossible d'ouvrir le fichier ///" << endl;
+	else cerr << "/// Impossible d'ouvrir le fichier " << nomFic << " ///" << endl;
 	return "";
 } //----- Fin de ChercherId
 

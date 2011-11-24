@@ -45,8 +45,6 @@ public:
 	// seront ceux de RefMotsCles, sinon, les identificateurs seront tous les
 	// identificateurs exceptés ceux de RefMotsCles.
 	//
-	// contrat :
-	//
 
 	// Fonction obsolete
 	string ChercherId(string nomFic, RefCroisees &desRefCroisees);
@@ -54,25 +52,6 @@ public:
 	// et renvoie une string contenant les identificateurs valides separes
 	// par le caractere '\n', entre les occurrences dans desRefCroisees.
 	// Entre les identificateurs trouvés dans &desRefCroisees
-	//
-	// contrat :
-	//
-
-	string FindNextId(string &phrase,bool & comActif);
-	// Mode d'emploi : renvoie le premier mot de la phrase et le supprime 
-	// de la phrase.
-	// Il supprime egalement les commentaires et les chaines de caracteres
-	// Si un commentaire du type "/* */" est rencontre comActif passe a vrai
-	// Si comActif est deja a vrai et que la fin de commentaire est rencontree
-	// comActif devient faux
-	//
-	// Contrat :
-	//
-
-	bool IdValide( string nomId );
-	// Mode d'emploi : renvoie vrai si nomId est un identificateur valide
-	//
-	// Contrat : nomId est compose de caracteres alphanumeriques et de '_'
 	//
 
   	// Fonction();
@@ -87,7 +66,22 @@ public:
 //------------------------------------------------------------------ PRIVE 
 protected:
 //----------------------------------------------------- Methodes protegees
-	
+
+	string FindNextId(string &phrase,bool & comActif);
+	// Mode d'emploi : renvoie le premier mot de la phrase et le supprime 
+	// de la phrase.
+	// Il supprime egalement les commentaires et les chaines de caracteres
+	// Si un commentaire du type "/* */" est rencontre comActif passe a vrai
+	// Si comActif est deja a vrai et que la fin de commentaire est rencontree
+	// comActif devient faux
+	//
+
+	bool IdValide( string nomId );
+	// Mode d'emploi : renvoie vrai si nomId est un identificateur valide
+	//
+	// Contrat : nomId est compose de caracteres alphanumeriques et de '_'
+	//
+
 //----------------------------------------------------- Attributs proteges
 
 };

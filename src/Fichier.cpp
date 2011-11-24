@@ -34,17 +34,17 @@ void Fichier::DisplayFichier() const
 bool Fichier::AddLigne( int numLigne )
 // Algorithme : Ajoute une ligne si elle n'existe pas deja.
 {
-	if (nbNumLignes == 0)
+	if (numLignes == NULL)
 	{
 		numLignes = new vector<int>;
 		numLignes->push_back(numLigne);
-		nbNumLignes++;
+
 		return 1;
 	}
-	else if (numLignes->at(nbNumLignes-1) != numLigne)
+	else if (numLignes->at(numLignes->size()-1) != numLigne)
 	{
 		numLignes->push_back(numLigne);
-		nbNumLignes++;
+		
 		return 1;
 	}
 	else 
@@ -68,7 +68,6 @@ Fichier::Fichier ( string unNom )
 	cout << "Appel du constructeur de Fichier" << endl;
 #endif
 	nomFic = unNom;
-	nbNumLignes = 0;
 	numLignes = NULL;
 } // ----- Fin de Fichier
 
@@ -79,7 +78,6 @@ Fichier::Fichier ( const Fichier & unFichier )
 	cout << "Appel du constructeur de copie de Fichier" << endl;
 #endif
 	nomFic =					unFichier.nomFic;
-	nbNumLignes =				unFichier.nbNumLignes;
 	numLignes =					new vector<int>;
 	*numLignes =				*unFichier.numLignes;
 } // ----- Fin de Fichier (Constructeur de copie)

@@ -42,7 +42,7 @@ using namespace std;
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
 
-int main ( ) 
+int main2 ( ) 
 {
 // Algorithme :
 //

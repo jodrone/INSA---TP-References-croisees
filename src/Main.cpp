@@ -26,7 +26,7 @@ using namespace std;
 
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
-int main2 ( int argc,const char* argv[] )
+int main ( int argc,const char* argv[] )
 // Algorithme : Traitement trivial des arguments
 // En cas d'erreur, on renvoie un message d'erreur + Usage()
 {
@@ -40,10 +40,11 @@ int main2 ( int argc,const char* argv[] )
 	string monArgTemporaire;
 	Flot monFlot;
 	RefCroisees mesRefCroisees;
+	RefCroisees mesRefMotsCles;
 	string maListeID;
 	bool optionExclure = false;
 	bool optionKeyWord = false;
-
+	
 
 	//In case of^^
     const int NB_MOTCLES = 63;
@@ -59,7 +60,8 @@ int main2 ( int argc,const char* argv[] )
                                "try", "typedef", "typeid", "typename", "union", "unsigned",
                                "using", "virtual", "void", "volatile", "wchar_t", "while"};
 
-
+	// Fichier de mots cles du cpp
+	string FicMotsCles = "motsClesCpp.txt";
 
 	switch ( argc )
 	{
@@ -79,10 +81,10 @@ int main2 ( int argc,const char* argv[] )
 				}
 			else
 			 	{ //On a notre fichier a traiter
-					//TODO : charger les mots clés C++
 					myIDFile = argv[1];
-					maListeID = monFlot.ChercherId(myIDFile,
-													mesRefCroisees);
+					monFlot.RemplirMotsCles(FicMotsCles, mesRefMotsCles);
+					monFlot.CreerRefCrois(myIDFile, mesRefMotsCles, 
+										   mesRefCroisees, optionExclure);
 				}
 		break;
 
@@ -101,19 +103,22 @@ int main2 ( int argc,const char* argv[] )
 			if (monArgTemporaire == "-e" )
 				{
 					optionExclure = true;
-					//TODO : récupérer les mots clés du C++
 					//On recupere les identifiants dans le fichier concerné
 					myIDFile = argv[2];
-					maListeID = monFlot.ChercherId(myIDFile,
-													mesRefCroisees);
+					monFlot.RemplirMotsCles(FicMotsCles, mesRefMotsCles);
+					monFlot.CreerRefCrois(myIDFile, mesRefMotsCles, 
+										   mesRefCroisees, optionExclure);				
 				}
 			else
 				{
 					//On récupère les identifiants dans les deux fichiers
+					monFlot.RemplirMotsCles(FicMotsCles, mesRefMotsCles);
 					for ( i = 1; i < argc; i++)
+					{
 					myIDFile = argv[i];
-					maListeID = monFlot.ChercherId(myIDFile,
-													mesRefCroisees);
+					monFlot.CreerRefCrois(myIDFile, mesRefMotsCles, 
+										   mesRefCroisees, optionExclure);
+					}				
 				}
 
 		break;
@@ -121,35 +126,39 @@ int main2 ( int argc,const char* argv[] )
 		default :
 			indexArg = 1;
 			monArgTemporaire = argv[indexArg];
-			if ( monArgTemporaire == "-k" )
-				{
-					// On récupère les mots clés
-					optionKeyWord = true;
-					myKeywordFile = argv[indexArg + 1];
-					maListeID = monFlot.ChercherId(myKeywordFile,
-													mesRefCroisees);
-					// On peut sauter un argument, on l'a traité
-					indexArg = indexArg + 2 ;
-				}
-
-			// En cas de modification de IndexArg suite à "-k"
-			monArgTemporaire = argv[indexArg];
+			
 			if ( monArgTemporaire == "-e" )
 				{
 					optionExclure = true;
 					indexArg = indexArg + 1 ;
 				}
+
+			// En cas de modification de IndexArg suite à "-e"
+			monArgTemporaire = argv[indexArg];
+			if ( monArgTemporaire == "-k" )
+				{
+					// On récupère les mots clés
+					optionKeyWord = true;
+					myKeywordFile = argv[indexArg + 1];
+					monFlot.RemplirMotsCles(myKeywordFile, mesRefMotsCles);
+
+					// On peut sauter un argument, on l'a traité
+					indexArg = indexArg + 2 ;
+				}
+
 			//Et on récupère les identifiants de tout le reste
 			for ( i = indexArg; i < argc; i++ )
 				{
 					myIDFile = argv[i];
-					maListeID = monFlot.ChercherId(myIDFile,
-												mesRefCroisees);
+					monFlot.CreerRefCrois(myIDFile, mesRefMotsCles, 
+										   mesRefCroisees, optionExclure);
 				}
 		break;
 
 	}
-	
+
+	mesRefCroisees.DisplayReference();
+
 	return 0;
 
 } //----- fin de Main 
@@ -159,14 +168,13 @@ void Usage ( string aPhrase )
 //Algorithme : Trivial
 {
 	cerr << "Erreur : " << aPhrase << endl;
-	cerr << "Usage : refCroisees [ -k fichier_keyword ] -e fichier1  ... fichier_n " << endl;
+	cerr << "Usage : refCroisees -e [ -k fichier_keyword ] fichier1  ... fichier_n " << endl;
 	cerr << "Usage : refCroisees [ -k fichier_keyword ] fichier1 ... fichier_n" << endl;
 	cerr << "Options : " << endl;
 	cerr << " -k : permet d'indiquer le fichier de mots cles a utiliser" << endl;
 	cerr << "Si -k est absent, les mots cles du C++ sont utilises par defaut " << endl;
 	cerr << " -e : permet d'exclure les mots cles " << endl;
 	cerr << " License DWTFYWPL. Copyleft 2011 par T.Pourcelot & J.Vincent" << endl;
-
 } //----- fin de Usage
 
 //----- Fin de Main.cpp
