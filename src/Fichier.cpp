@@ -10,6 +10,7 @@
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include systeme
+#include <iostream>
 using namespace std;
 
 //------------------------------------------------------ Include personnel
@@ -20,8 +21,18 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Methodes publiques
+void Fichier::DisplayFichier() const
+// Algorithme : Trivial
+{
+	cout << "\t" << nomFic;
+	for (int i=0; i<numLignes->size(); i++)
+	{
+		cout << " " << numLignes->at(i);
+	}
+}
+
 bool Fichier::AddLigne( int numLigne )
-// Algorithme :
+// Algorithme : Ajoute une ligne si elle n'existe pas deja.
 {
 	if (nbNumLignes == 0)
 	{

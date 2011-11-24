@@ -12,7 +12,7 @@
 //-------------------------------------------------------- Include systeme
 using namespace std;
 #include <algorithm>
-
+#include <iostream>
 //------------------------------------------------------ Include personnel
 #include "Occurrences.h"
 
@@ -21,6 +21,17 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Methodes publiques
+
+void Occurrences::DisplayOccurrences () const
+// Algorithme: Trivial 
+{
+	vector<Fichier>::const_iterator it;
+
+	for ( it = vecOcc.begin(); it != vecOcc.end(); ++it)
+	{
+		it->DisplayFichier();
+	}
+}
 
 bool Occurrences::AjouterOccurrence ( string nomFic, int numLigne )
 // Algorithme :

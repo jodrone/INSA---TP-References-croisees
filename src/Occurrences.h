@@ -29,9 +29,14 @@ class Occurrences
 
 public:
 //----------------------------------------------------- Methodes publiques
+	void DisplayOccurrences () const;
+	// Mode d'emploi : affiche sur la sortie standard la liste des
+	// occurrences
+	//
+
 	bool AjouterOccurrence ( string nomFic, int numLigne );
-	// Mode d'emploi : ajoute une occurence. Retourne faux si occurrence deja
-	// existante et vrai sinon.
+	// Mode d'emploi : ajoute une occurence. Retourne faux si occurrence 
+	// deja existante et vrai sinon.
 	//
 	// Contrat : numLigne > 0
 	//

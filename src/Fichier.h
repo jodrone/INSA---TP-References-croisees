@@ -30,6 +30,11 @@ class Fichier
 
 public:
 //----------------------------------------------------- Méthodes publiques
+	void Fichier::DisplayFichier() const;
+	// Mode d'emploi : Affiche sur la sortie standard la liste des numeros
+	// de lignes associes au fichier.
+	//
+
 	bool operator==(Fichier const & unFichier) const;
 	// Mode d'emploi : renvoie vrai unFichier est égal à this
 	//

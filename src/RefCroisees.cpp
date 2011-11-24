@@ -11,7 +11,9 @@
 
 //-------------------------------------------------------- Include systeme
 using namespace std;
-#include <algorithm> 
+#include <algorithm>
+#include <iostream>
+
 
 //------------------------------------------------------ Include personnel
 #include "RefCroisees.h"
@@ -21,6 +23,21 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Methodes publiques
+void RefCroisees::DisplayReference() const
+// Algorithme : Parcours integral du dictionnaire
+{
+	TypeDicoId::const_iterator it;
+
+	cout << endl << "Liste des Identificateurs" << endl;
+
+	for ( it = dicoId.begin(); it != dicoId.end(); ++it)
+	{
+		cout <<  it->first << "\t" ;
+		it->second->DisplayOccurrences();
+		cout << endl;
+	}
+}
+
 bool RefCroisees::FindReference(const string id)
 // Algorithme : On parcourt l'arbre pour trouver si l'identifiant existe.
 {

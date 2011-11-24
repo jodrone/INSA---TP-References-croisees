@@ -37,6 +37,10 @@ public:
 	typedef map <string, Occurrences *> TypeDicoId;
 	typedef pair<string,Occurrences *>	TypePairId;
 
+	void DisplayReference() const;
+	// Mode d'emploi : Affiche sur la sortie standard l'integralite de 
+	// dicoId et des occurrences respectives des Identificateurs.
+	
 	bool FindReference(const string id);
 	// Mode d'emploi : cherche l'identificaeur id dans le dictionnaire.
 	// Renvoie false s'il n'existe pas, true sinon.

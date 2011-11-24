@@ -44,7 +44,6 @@ using namespace std;
 
 int main ( ) 
 {
-
 // Algorithme :
 //
 	//string	adresseFichiers("fichiers/"); // Tristan
@@ -56,7 +55,7 @@ int main ( )
 	RefCroisees mesRefCroisees;
 
 	listeId = monFlot.ChercherId(adresseFichiers+="source.txt", mesRefCroisees);
-
+	mesRefCroisees.DisplayReference();
 	cin >> a;
 	return a;
 
