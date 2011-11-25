@@ -1,7 +1,7 @@
 /*************************************************************************
                            Fichier  -  description
                              -------------------
-    début                : ...
+    dï¿½but                : ...
     copyright            : (C) 2011 par Tristan Pourcelot & Jordan Vincent 
 *************************************************************************/
 
@@ -9,7 +9,7 @@
 #if ! defined ( FICHIER_H )
 #define FICHIER_H
 
-//--------------------------------------------------- Interfaces utilisées
+//--------------------------------------------------- Interfaces utilisï¿½es
 #include <vector>
 #include <string>
 //------------------------------------------------------------- Constantes 
@@ -17,10 +17,10 @@
 //------------------------------------------------------------------ Types 
 
 //------------------------------------------------------------------------ 
-// Rôle de la classe <Fichier>
+// Rï¿½le de la classe <Fichier>
 // 
-// La classe Fichier a pour rôle de représenter les occurences d'un fichier 
-// pour un identificateur donné.
+// La classe Fichier a pour rï¿½le de reprï¿½senter les occurences d'un fichier 
+// pour un identificateur donnï¿½.
 //
 //------------------------------------------------------------------------ 
 
@@ -29,26 +29,26 @@ class Fichier
 //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- Méthodes publiques
-	void Fichier::DisplayFichier() const;
+//----------------------------------------------------- Mï¿½thodes publiques
+	void DisplayFichier() const;
 	// Mode d'emploi : Affiche sur la sortie standard la liste des numeros
 	// de lignes associes au fichier.
 	//
 
 	bool operator==(Fichier const & unFichier) const;
-	// Mode d'emploi : renvoie vrai unFichier est égal à this
+	// Mode d'emploi : renvoie vrai unFichier est ï¿½gal ï¿½ this
 	//
 	// Contrat : le test ne ce fait que sur l'attribut nomFic !
 	//
 
 	bool AddLigne( int numLigne );
-	// Mode d'emploi : Ajoute un numéro de ligne au vecteur de numéros de 
-	// lignes. Incrémente nbNumLignes. 
-	// Renvoie faux si numéro déja existant, vrai sinon.
+	// Mode d'emploi : Ajoute un numï¿½ro de ligne au vecteur de numï¿½ros de 
+	// lignes. Incrï¿½mente nbNumLignes. 
+	// Renvoie faux si numï¿½ro dï¿½ja existant, vrai sinon.
 	//
 	// Contrat : numLigne est strictement positif.
-	//			 les numéros sont supposés triés par ordre croissant et
-	// numLigne est supposé être plus grand que tous les numéros du vector
+	//			 les numï¿½ros sont supposï¿½s triï¿½s par ordre croissant et
+	// numLigne est supposï¿½ ï¿½tre plus grand que tous les numï¿½ros du vector
 	//
 
   	// Fonction();
@@ -80,14 +80,14 @@ public:
 
 //------------------------------------------------------------------ PRIVE 
 protected:
-//----------------------------------------------------- Méthodes protégées	
+//----------------------------------------------------- Mï¿½thodes protï¿½gï¿½es	
 	
-//----------------------------------------------------- Attributs protégés
+//----------------------------------------------------- Attributs protï¿½gï¿½s
 
 	string nomFic;
 	vector <int> *numLignes;
 };
 
-//----------------------- Autres définitions dépendantes de <Fichier>
+//----------------------- Autres dï¿½finitions dï¿½pendantes de <Fichier>
 
 #endif // FICHIER_H
