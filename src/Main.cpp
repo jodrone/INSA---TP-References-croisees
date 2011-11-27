@@ -145,6 +145,10 @@ int main ( int argc,const char* argv[] )
 					// On peut sauter un argument, on l'a traité
 					indexArg = indexArg + 2 ;
 				}
+			else
+				{
+					monFlot.RemplirMotsCles(FicMotsCles, mesRefMotsCles);
+				}
 
 			//Et on récupère les identifiants de tout le reste
 			for ( i = indexArg; i < argc; i++ )

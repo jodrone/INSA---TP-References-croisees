@@ -28,11 +28,9 @@ void RefCroisees::DisplayReference() const
 {
 	TypeDicoId::const_iterator it;
 
-	cout << endl << "Liste des Identificateurs" << endl;
-
 	for ( it = dicoId.begin(); it != dicoId.end(); ++it)
 	{
-		cout <<  it->first << "\t" ;
+		cout <<  it->first ;
 		it->second->DisplayOccurrences();
 		cout << endl;
 	}

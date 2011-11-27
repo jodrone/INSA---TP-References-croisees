@@ -11,6 +11,7 @@
 
 //-------------------------------------------------------- Include systeme
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 //------------------------------------------------------ Include personnel
@@ -41,10 +42,10 @@ bool Fichier::AddLigne( int numLigne )
 
 		return 1;
 	}
-	else if (numLignes->at(numLignes->size()-1) != numLigne)
+	else if (! binary_search (numLignes->begin(), numLignes->end(), numLigne))
+			
 	{
-		numLignes->push_back(numLigne);
-		
+		numLignes->push_back(numLigne);		
 		return 1;
 	}
 	else 
