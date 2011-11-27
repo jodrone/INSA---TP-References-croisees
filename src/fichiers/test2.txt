@@ -1,0 +1,11 @@
+/* Fichier n°2 de test du programme Références Croisées
+
+Nouveaux Mots clés : */
+	a
+	const
+	const
+	double
+	Demande
+	B
+	(0)
+	>>
