@@ -6,7 +6,6 @@
 CPP_SRCS += \
 ../src/Fichier.cpp \
 ../src/Flot.cpp \
-../src/Identificateur.cpp \
 ../src/Main.cpp \
 ../src/Occurrences.cpp \
 ../src/RefCroisees.cpp 
@@ -14,7 +13,6 @@ CPP_SRCS += \
 OBJS += \
 ./src/Fichier.o \
 ./src/Flot.o \
-./src/Identificateur.o \
 ./src/Main.o \
 ./src/Occurrences.o \
 ./src/RefCroisees.o 
@@ -22,7 +20,6 @@ OBJS += \
 CPP_DEPS += \
 ./src/Fichier.d \
 ./src/Flot.d \
-./src/Identificateur.d \
 ./src/Main.d \
 ./src/Occurrences.d \
 ./src/RefCroisees.d 
