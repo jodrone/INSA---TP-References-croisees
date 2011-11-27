@@ -68,6 +68,7 @@ public:
 
 	Fichier ( string unNom );
 	// Mode d'emploi : constructeur 
+	// Initialise nomFic et met numLignes à NULL
 	//
 	// Contrat :
 	//
@@ -85,7 +86,11 @@ protected:
 //----------------------------------------------------- Attributs protï¿½gï¿½s
 
 	string nomFic;
+	// nom du fichier
+
 	vector <int> *numLignes;
+	// Pointeur sur un tableau dynamique de numeros de lignes tries par ordre 
+	// croissant.
 };
 
 //----------------------- Autres dï¿½finitions dï¿½pendantes de <Fichier>

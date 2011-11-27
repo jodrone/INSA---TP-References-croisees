@@ -58,6 +58,12 @@ public:
 	// Contrat : numLigne > 0
 	//
 
+	// Fonction();
+	// Mode d'emploi :
+	//
+	// Contrat :
+	//
+
 //-------------------------------------------- Constructeurs - destructeur
 	RefCroisees ( const RefCroisees & uneRefCroisees );
 	// Mode d'emploi (constructeur de copie) : construit une copie de 
@@ -67,7 +73,7 @@ public:
 	//
 
 	RefCroisees ();
-	// Mode d'emploi :
+	// Mode d'emploi : Constructeur par defaut
 	//
 	// Contrat :
 	//
@@ -84,14 +90,11 @@ protected:
 //----------------------------------------------------- Attributs proteges
 
 	TypeDicoId dicoId;
+	// Dictionnaire contenant des pointeurs sur les occurrences 
+	// correspondant à une cle de type string representant les 
+	// identificateurs  
 };
 
 //----------------------- Autres definitions dependantes de <RefCroisees>
 
 #endif // REFCROISEES_H
-
-// Fonction();
-// Mode d'emploi :
-//
-// Contrat :
-//

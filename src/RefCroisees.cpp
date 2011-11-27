@@ -99,7 +99,17 @@ RefCroisees::RefCroisees ( const RefCroisees & uneRefCroisees )
 {
 #if defined ( MAP ) 
 	cout << "Appel du constructeur de copie de RefCroisees" << endl;
-#endif	
+#endif
+	TypeDicoId::const_iterator it;
+	
+	for (it = uneRefCroisees.dicoId.begin(); 
+		it != uneRefCroisees.dicoId.end();
+		it++)
+	{
+	Occurrences *occTemp = new Occurrences(*(it->second));
+	TypePairId myPair(it->first,occTemp);
+	dicoId.insert ( myPair);	
+	}
 } // ----- Fin de RefCroisees (constructeur de copie )
 
 RefCroisees::~RefCroisees ( )
@@ -108,6 +118,7 @@ RefCroisees::~RefCroisees ( )
 #if defined ( MAP ) 
 	cout << "Appel du destructeur de RefCroisees" << endl;
 #endif	
+	dicoId.erase (dicoId.begin(),dicoId.end());
 } // ----- Fin de ~RefCroisees
 
 

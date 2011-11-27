@@ -23,7 +23,7 @@ using namespace std;
 
 //----------------------------------------------------- Methodes publiques
 void Fichier::DisplayFichier() const
-// Algorithme : Trivial
+// Algorithme : Parcourt de numLignes et affichage des numeros de ligne
 {
 	cout << "\t" << nomFic;
 	for (int i=0; i<numLignes->size(); i++)
@@ -68,8 +68,8 @@ Fichier::Fichier ( string unNom )
 #if defined ( MAP ) 
 	cout << "Appel du constructeur de Fichier" << endl;
 #endif
-	nomFic = unNom;
-	numLignes = NULL;
+	nomFic =		unNom;
+	numLignes =		NULL;
 } // ----- Fin de Fichier
 
 Fichier::Fichier ( const Fichier & unFichier )
@@ -78,9 +78,9 @@ Fichier::Fichier ( const Fichier & unFichier )
 #if defined ( MAP ) 
 	cout << "Appel du constructeur de copie de Fichier" << endl;
 #endif
-	nomFic =					unFichier.nomFic;
-	numLignes =					new vector<int>;
-	*numLignes =				*unFichier.numLignes;
+	nomFic =		unFichier.nomFic;
+	numLignes =		new vector<int>;
+	*numLignes =	*unFichier.numLignes;
 } // ----- Fin de Fichier (Constructeur de copie)
 
 Fichier::~Fichier ( )
@@ -89,7 +89,7 @@ Fichier::~Fichier ( )
 #if defined ( MAP ) 
 	cout << "Appel du destructeur de Fichier" << endl;
 #endif
-	delete numLignes; 
+	delete numLignes;
 } // ----- Fin de ~Fichier
 
 //------------------------------------------------------------------ PRIVE

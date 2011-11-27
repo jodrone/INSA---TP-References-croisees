@@ -162,7 +162,7 @@ int main ( int argc,const char* argv[] )
 	}
 
 	mesRefCroisees.DisplayReference();
-
+	//mesRefCroisees.~RefCroisees();
 	return 0;
 
 } //----- fin de Main 

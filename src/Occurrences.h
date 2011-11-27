@@ -74,6 +74,8 @@ protected:
 
 //----------------------------------------------------- Attributs proteges
 	vector <Fichier> vecOcc;
+	// Tableau dynamique de Fichier, contient toutes les occurences d'un
+	// identificateur sans doublons.
 };
 
 //----------------------- Autres definitions dependantes de <Occurrences>

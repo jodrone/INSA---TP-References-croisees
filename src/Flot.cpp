@@ -110,7 +110,6 @@ string Flot::FindNextId(string &phrase, bool & comActif)
 	if ( std::isalnum(lettre,std::locale()) || lettre == '_') i++;
 
 	mot = phrase.substr(0,i);
-
 	
 	// Cas fin de commentaire '*/'
 	if (lettre == '*' && comment == true)
