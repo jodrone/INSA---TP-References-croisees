@@ -4,6 +4,7 @@
 #trucs compilés
 *.o
 
+.metadata
 #Latex, cf template github
 *.aux
 *.bbl
