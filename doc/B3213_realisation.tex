@@ -101,6 +101,10 @@
 \section{Choix g\'en\'eraux}
 
 \subsection{Utilisation de la STL}
+Afin d'impl\'ementer la structure de donn\'ees sp\'ecid\'ee pr\'eliminairement,
+nous avons tent\'e d'utiliser au maximum les structures de donn\'es mises à disposition par la STL.
+
+Nous avons donc choisi d'utiliser le type \verb!string! afin de g\'erer les chaînes de caractère, la structure \verb!vector! pour adapter au mieux nos tableaux dynamiques, et enfin la structure \verb!map! pour la r\'ealisation de notre arbre binaire de recherche.
 
 \newpage
 
@@ -128,5 +132,69 @@
 
 \newpage
 \section{Plan de test}
+
+\subsection{Groupe A: Tests propos\'es par le sujet}
+
+\subsubsection{Fichiers :}
+\lstinputlisting{../src/tests/testA1.cpp}
+\lstinputlisting{../src/tests/testA1.h}
+\lstinputlisting{../src/tests/keywords.txt}
+\subsubsection{Test A1}
+Commande : \verb!refCroisees -e -k keywords.txt testA1.cpp testA1.h}!
+
+R\'esultat :\\
+\newline
+\includegraphics{images/testA1.png}
+
+\subsubsection{Test A2}
+Commande : \verb!refCroisees -k keywords.txt testA1.cpp testA1.h!\\
+R\'esultat :\\
+\newline
+\includegraphics{images/testA2.png}
+\newpage
+
+\subsection{Groupe B : extension des tests propos\'es}
+\subsubsection{Fichiers :}
+\lstinputlisting{../src/fichiers/test1.cpp}
+\lstinputlisting{../src/fichiers/motsClesCpp.txt}
+\lstinputlisting{../src/fichiers/test2.txt}
+\newpage
+
+\subsubsection{Test B1}
+Commande : \verb!refCroisees test1.cpp!\\
+R\'esultat :\\
+\newline
+\includegraphics{images/testB1.png}
+
+\subsubsection{Test B2}
+Commande : \verb!refCroisees -e test1.cpp!\\
+R\'esultat :\\
+\newline
+\includegraphics{images/testB2.png}
+
+\subsubsection{Test B3}
+Commande : \verb!refCroisees -k test2.txt test1.cpp!\\
+R\'esultat :\\
+\newline
+\includegraphics{images/testB3.png}
+
+\subsubsection{Test B4}
+Commande : \verb!refCroisees -e -k test2.txt test1.cpp!\\
+R\'esultat :\\
+\newline
+\includegraphics{images/testB4.png}
+
+\subsubsection{Test B5}
+Commande : \verb!refCroisees -e -k test1.cpp test1.cpp!\\
+R\'esultat :\\
+\newline
+\includegraphics{images/testB5.png}
+
+\subsubsection{Test B6}
+Commande : \verb!refCroisees test1.cpp test1.cpp test1.cpp!\\
+R\'esultat :\\
+\newline
+\includegraphics{images/testB6.png}
+
 
 \end{document}

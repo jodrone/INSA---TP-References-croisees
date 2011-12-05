@@ -1,24 +1,24 @@
 #include<iostream> 
 
 using namespace std;
-/* Fichier n°1 de test du programme 
-Références Croisées */
+/* Fichier numero 1 de test du programme 
+References Croisees */
 
 int main()
 {
-   double a(0), b(0); //Déclaration des variables utiles
+   double a(0), b(0); //Declaration des variables utiles
 
    cout << "Bienvenue dans le programme d'addition a+b !" << endl;
 
    cout << "Donnez une valeur pour a : ";    //Demande du premier nombre 
    cin >> a;
 
-   cout << "Donnez une valeur pour b : ";    //Demande du deuxième nombre
+   cout << "Donnez une valeur pour b : ";    //Demande du deuxieme nombre
    cin >> b; cin >> b;
 
-   double const resultat(a + b);   //On effectue l'opération
+   double const resultat(a + b);   //On effectue l'operation
 
-   cout << a << " + " << b << " = " << resultat << endl; //On affiche le résultat
+   cout << a << " + " << b << " = " << resultat << endl; //On affiche le resultat
 
    return 0;
 }

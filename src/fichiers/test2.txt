@@ -1,6 +1,6 @@
-/* Fichier n°2 de test du programme Références Croisées
+/* Fichier n2 de test du programme References Croisees
 
-Nouveaux Mots clés : */
+Nouveaux Mots cles : */
 	a
 	const
 	const
