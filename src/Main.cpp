@@ -30,7 +30,6 @@ int main ( int argc,const char* argv[] )
 // Algorithme : Traitement trivial des arguments
 // En cas d'erreur, on renvoie un message d'erreur + Usage()
 {
-	// TODO : REFACTORING
 	//Index de l'argument traite
 	int indexArg = 1;
 	int i;
@@ -72,7 +71,7 @@ int main ( int argc,const char* argv[] )
 
 
 		case 2 : // Soit -k et pas de fichier soit pas d'options
-			// Dans tout les cas, on utilise les mots clés du CPP
+			// Dans tout les cas, on utilise les mots cles du CPP
 			monArgTemporaire = argv [ 1 ];
 			if ( monArgTemporaire == "-k" || monArgTemporaire == "-e" )
 				{
@@ -92,7 +91,7 @@ int main ( int argc,const char* argv[] )
 		case 3 :
 			// Cas d'erreur :
 			// -k + le fichier de mots cles (pas de fichier a traiter)
-			// Dans tout les cas, on utilise les mots clés du CPP
+			// Dans tout les cas, on utilise les mots cles du CPP
 			monArgTemporaire = argv[1];
 			if ( monArgTemporaire == "-k" )
 				{
@@ -103,7 +102,7 @@ int main ( int argc,const char* argv[] )
 			if (monArgTemporaire == "-e" )
 				{
 					optionExclure = true;
-					//On recupere les identifiants dans le fichier concerné
+					//On recupere les identifiants dans le fichier concerne
 					myIDFile = argv[2];
 					monFlot.RemplirMotsCles(FicMotsCles, mesRefMotsCles);
 					monFlot.CreerRefCrois(myIDFile, mesRefMotsCles, 
@@ -111,7 +110,7 @@ int main ( int argc,const char* argv[] )
 				}
 			else
 				{
-					//On récupère les identifiants dans les deux fichiers
+					//On recupere les identifiants dans les deux fichiers
 					monFlot.RemplirMotsCles(FicMotsCles, mesRefMotsCles);
 					for ( i = 1; i < argc; i++)
 					{
@@ -133,16 +132,16 @@ int main ( int argc,const char* argv[] )
 					indexArg = indexArg + 1 ;
 				}
 
-			// En cas de modification de IndexArg suite à "-e"
+			// En cas de modification de IndexArg suite a "-e"
 			monArgTemporaire = argv[indexArg];
 			if ( monArgTemporaire == "-k" )
 				{
-					// On récupère les mots clés
+					// On recupere les mots cles
 					optionKeyWord = true;
 					myKeywordFile = argv[indexArg + 1];
 					monFlot.RemplirMotsCles(myKeywordFile, mesRefMotsCles);
 
-					// On peut sauter un argument, on l'a traité
+					// On peut sauter un argument, on l'a traite
 					indexArg = indexArg + 2 ;
 				}
 			else
@@ -150,7 +149,7 @@ int main ( int argc,const char* argv[] )
 					monFlot.RemplirMotsCles(FicMotsCles, mesRefMotsCles);
 				}
 
-			//Et on récupère les identifiants de tout le reste
+			//Et on recupere les identifiants de tout le reste
 			for ( i = indexArg; i < argc; i++ )
 				{
 					myIDFile = argv[i];

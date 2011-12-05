@@ -35,7 +35,7 @@ void Occurrences::DisplayOccurrences () const
 
 bool Occurrences::AjouterOccurrence ( string nomFic, int numLigne )
 // Algorithme :
-// On recherche si il existe déjà une occurrence dans un fichier,
+// On recherche si il existe deja une occurrence dans un fichier,
 // Puis on appelle AddLigne sur un nouveau fichier, ou sur le fichier existant
 {
 	vector<Fichier>::iterator it;

@@ -12,16 +12,12 @@
 //--------------------------------------------------- Interfaces utilisees
 #include <string>
 #include "RefCroisees.h"
-//------------------------------------------------------------- Constantes 
-
-//------------------------------------------------------------------ Types 
 
 //------------------------------------------------------------------------ 
 // Role de la classe <Flot>
 // 
 // La classe Flot a pour role de lire et chercher les identificateurs dans
 // les fichiers source.
-//
 //------------------------------------------------------------------------ 
 
 class Flot 
@@ -32,7 +28,7 @@ public:
 //----------------------------------------------------- Methodes publiques
 	
 	void RemplirMotsCles(string nomFicMC, RefCroisees &uneRefMotsCles); 
-	// Mode d'emploi : rempli les références de mots clés avec le fichier 
+	// Mode d'emploi : rempli les references de mots cles avec le fichier 
 	// entre en parametre.
 	//
 
@@ -40,18 +36,10 @@ public:
 							RefCroisees &desRefCroisees, bool exclure = 0);
 	// Mode d'emploi : lit le fichier dont le chemin est passe en parametre
 	// et renseigne desRefCroisees avec les occurrences des identificateurs
-	// rencontrés.
-	// Lorsque exclure vaut 0, les identificateurs entrés dans desRefCroisees
+	// rencontres.
+	// Lorsque exclure vaut 0, les identificateurs entres dans desRefCroisees
 	// seront ceux de RefMotsCles, sinon, les identificateurs seront tous les
-	// identificateurs exceptés ceux de RefMotsCles.
-	//
-
-  	// Fonction();
-	// Mode d'emploi :
-	//
-	// Contrat : 
-	//
-
+	// identificateurs exceptes ceux de RefMotsCles.
 
 //-------------------------------------------- Constructeurs - destructeur
 
@@ -66,18 +54,12 @@ protected:
 	// Si un commentaire du type "/* */" est rencontre comActif passe a vrai
 	// Si comActif est deja a vrai et que la fin de commentaire est rencontree
 	// comActif devient faux
-	//
 
 	bool IdValide( string nomId );
 	// Mode d'emploi : renvoie vrai si nomId est un identificateur valide
 	//
 	// Contrat : nomId est compose de caracteres alphanumeriques et de '_'
-	//
-
-//----------------------------------------------------- Attributs proteges
 
 };
-
-//----------------------- Autres definitions dependantes de <Fichier>
 
 #endif // FLOT_H

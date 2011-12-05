@@ -11,16 +11,12 @@
 
 //--------------------------------------------------- Interfaces utilisees
 #include "Fichier.h"
-//------------------------------------------------------------- Constantes 
-
-//------------------------------------------------------------------ Types 
 
 //------------------------------------------------------------------------ 
 // Role de la classe <Occurrences>
 // 
 // La classe Occurrences a pour role de contenir toutes les occurrences d'un
 // identificateur.
-//
 //------------------------------------------------------------------------ 
 
 class Occurrences 
@@ -39,45 +35,26 @@ public:
 	// deja existante et vrai sinon.
 	//
 	// Contrat : numLigne > 0
-	//
-
-  	// Fonction();
-	// Mode d'emploi :
-	//
-	// Contrat : 
-	//
 
 //-------------------------------------------- Constructeurs - destructeur
 
 	Occurrences ( const Occurrences & uneOccurrences );
 	// Mode d'emploi (constructeur de copie) : construit une copie de 
 	// uneOccurrences
-	//
-	// Contrat :
-	//
 
 	Occurrences ( );
 	// Mode d'emploi :
-	//
-	// Contrat :
-	//
 
     virtual ~Occurrences ( );
 	// Mode d'emploi (destructeur) :
-	//
-	// Contrat :
-	//
 
 //------------------------------------------------------------------ PRIVE 
 protected:
-//----------------------------------------------------- Methodes protegees
 
 //----------------------------------------------------- Attributs proteges
 	vector <Fichier> vecOcc;
 	// Tableau dynamique de Fichier, contient toutes les occurences d'un
 	// identificateur sans doublons.
 };
-
-//----------------------- Autres definitions dependantes de <Occurrences>
 
 #endif // OCCURRENCES_H

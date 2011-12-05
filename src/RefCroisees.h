@@ -21,7 +21,7 @@
 //------------------------------------------------------------------------ 
 // Role de la classe <RefCroisees>
 // 
-// La classe RefCroisees a pour role de gérer l'ensembles des références
+// La classe RefCroisees a pour role de gerer l'ensembles des references
 // croisees.
 //
 //------------------------------------------------------------------------ 
@@ -47,21 +47,15 @@ public:
 
 	void AddReference(string id);
 	// Mode d'emploi : Ajoute un identificateur au dictionnaire. S'il est 
-	// inconnu, il est créé.
+	// inconnu, il est cree.
 	//
 
 	void AddReference(string id, int numLigne, string nomFic );
-	// Mode d'emploi : ajoute une référence au dictionnaire.
-	// Si l'Identificateur est inconnu, il est créé.
-	// L'occurence est ensuite ajoutée.
+	// Mode d'emploi : ajoute une reference au dictionnaire.
+	// Si l'Identificateur est inconnu, il est cree.
+	// L'occurence est ensuite ajoutee.
 	//
 	// Contrat : numLigne > 0
-	//
-
-	// Fonction();
-	// Mode d'emploi :
-	//
-	// Contrat :
 	//
 
 //-------------------------------------------- Constructeurs - destructeur
@@ -91,7 +85,7 @@ protected:
 
 	TypeDicoId dicoId;
 	// Dictionnaire contenant des pointeurs sur les occurrences 
-	// correspondant à une cle de type string representant les 
+	// correspondant a une cle de type string representant les 
 	// identificateurs  
 };
 
